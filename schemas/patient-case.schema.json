@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/cathlab/patient-case/1.0.0",
+  "title": "CathLab AI Patient Case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "case_version",
+    "seed",
+    "schema_version",
+    "review",
+    "public_case",
+    "reference_findings"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^CASE-[A-Z0-9-]+$"
+    },
+    "case_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "author",
+        "clinical_reviewer",
+        "review_date",
+        "review_status"
+      ],
+      "properties": {
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clinical_reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "review_status": {
+          "enum": [
+            "draft",
+            "pending_review",
+            "approved",
+            "rejected"
+          ]
+        }
+      }
+    },
+    "public_case": {
+      "type": "object",
+      "required": [
+        "title",
+        "presentation",
+        "allergy_history",
+        "investigation_catalog",
+        "pathways"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "presentation": {
+          "type": "object"
+        },
+        "allergy_history": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "investigation_catalog": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "pathways": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "reference_findings": {
+      "type": "object"
+    }
+  }
+}

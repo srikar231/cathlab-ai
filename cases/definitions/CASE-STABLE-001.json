@@ -1,0 +1,261 @@
+{
+  "case_id": "CASE-STABLE-001",
+  "case_version": "1.0.0",
+  "seed": 71011,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Mild-risk teaching case: stable exertional chest discomfort",
+    "presentation": {
+      "age": 58,
+      "symptoms": [
+        "Brief chest tightness when walking uphill, resolves with rest",
+        "No pain at rest in the scenario history"
+      ],
+      "history": [
+        "Hypertension and elevated LDL cholesterol in fictional history",
+        "No known prior myocardial infarction"
+      ],
+      "vitals": {
+        "heart_rate_bpm": 72,
+        "systolic_bp_mmhg": 128,
+        "oxygen_saturation_percent": 98,
+        "status": "hemodynamically stable"
+      },
+      "initial_ecg_summary": "No acute ischemic ST-segment change in the simulated resting ECG.",
+      "initial_troponin_summary": "Serial high-sensitivity troponin values are below the fictional assay-specific 99th percentile and show no significant rise/fall.",
+      "notice": "Fictional synthetic educational scenario. Risk tier is a teaching label, not a clinical score."
+    },
+    "allergy_history": [],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "angiography",
+        "name": "Coronary angiography report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive investigation with risks; simulated result only, not a real procedural guide.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "physiology_imaging",
+        "name": "Coronary physiology / IVUS-OCT review (simulated)",
+        "cost_points": 4,
+        "duration_minutes": 25,
+        "limitations": "Use only where the scenario and qualified review establish relevance; modalities have limitations.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "risk_refine",
+        "label": "Continue risk assessment and non-invasive evaluation as appropriate",
+        "classification": "acceptable",
+        "supports": [
+          "Stable symptoms, no rest pain in scenario",
+          "No dynamic ECG change or troponin rise in provided data"
+        ],
+        "against": [],
+        "unknowns": [
+          "Full risk profile",
+          "Appropriate test choice",
+          "Symptom trajectory"
+        ],
+        "reason": "A lower-acuity pathway may be considered only after complete clinical assessment; this is not a patient-specific recommendation."
+      },
+      {
+        "id": "physiology_guided",
+        "label": "If angiography is clinically justified, assess lesion significance before revascularization",
+        "classification": "acceptable_with_caveats",
+        "supports": [
+          "Intermediate lesion leaves uncertainty about functional significance"
+        ],
+        "against": [
+          "Invasive testing has risk and may not be needed for every stable patient"
+        ],
+        "unknowns": [
+          "Physiology result",
+          "Patient preference",
+          "Full anatomy"
+        ],
+        "reason": "Demonstrates that an intermediate angiographic narrowing should not automatically trigger stenting."
+      },
+      {
+        "id": "empiric_stent",
+        "label": "Stent the RCA based on visual estimate alone",
+        "classification": "not_recommended",
+        "supports": [],
+        "against": [
+          "No demonstrated culprit ACS",
+          "Intermediate stenosis alone is insufficient evidence of benefit"
+        ],
+        "unknowns": [
+          "Functional significance",
+          "Alternative diagnosis"
+        ],
+        "reason": "Unsafe reasoning trap: do not equate a percentage estimate with an automatic PCI indication."
+      }
+    ],
+    "risk_tier": "Mild / lower-acuity teaching tier; not a calculated GRACE/TIMI score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "angiography",
+      "physiology_imaging"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "Stable chest pain with suspected chronic coronary syndrome; intermediate RCA lesion of uncertain functional significance. Alternative causes remain in the differential.",
+    "risk_assessment": "Mild / lower-acuity teaching tier; not a calculated GRACE/TIMI score.",
+    "investigation_reports": {
+      "ecg": "No acute ischemic ST-segment change in the simulated resting ECG.",
+      "serial_troponin": "Serial high-sensitivity troponin values are below the fictional assay-specific 99th percentile and show no significant rise/fall.",
+      "echo": "Preserved LV systolic function; no definite regional wall-motion abnormality in this synthetic report.",
+      "angiography": "Illustrative report: right coronary artery (RCA) with an intermediate 50\u201360% focal mid-vessel narrowing; left main, LAD and circumflex without a high-grade stenosis in this scenario. Angiographic severity alone does not establish functional significance."
+    },
+    "lesions": [
+      {
+        "vessel": "RCA",
+        "segment": "mid RCA",
+        "lesion_type": "intermediate focal stenosis",
+        "estimated_stenosis": "50\u201360% (synthetic)",
+        "flow": "TIMI 3 (synthetic)",
+        "complexity": "non-complex teaching lesion"
+      }
+    ],
+    "pathway_review": [
+      {
+        "id": "risk_refine",
+        "label": "Continue risk assessment and non-invasive evaluation as appropriate",
+        "classification": "acceptable",
+        "supports": [
+          "Stable symptoms, no rest pain in scenario",
+          "No dynamic ECG change or troponin rise in provided data"
+        ],
+        "against": [],
+        "unknowns": [
+          "Full risk profile",
+          "Appropriate test choice",
+          "Symptom trajectory"
+        ],
+        "reason": "A lower-acuity pathway may be considered only after complete clinical assessment; this is not a patient-specific recommendation."
+      },
+      {
+        "id": "physiology_guided",
+        "label": "If angiography is clinically justified, assess lesion significance before revascularization",
+        "classification": "acceptable_with_caveats",
+        "supports": [
+          "Intermediate lesion leaves uncertainty about functional significance"
+        ],
+        "against": [
+          "Invasive testing has risk and may not be needed for every stable patient"
+        ],
+        "unknowns": [
+          "Physiology result",
+          "Patient preference",
+          "Full anatomy"
+        ],
+        "reason": "Demonstrates that an intermediate angiographic narrowing should not automatically trigger stenting."
+      },
+      {
+        "id": "empiric_stent",
+        "label": "Stent the RCA based on visual estimate alone",
+        "classification": "not_recommended",
+        "supports": [],
+        "against": [
+          "No demonstrated culprit ACS",
+          "Intermediate stenosis alone is insufficient evidence of benefit"
+        ],
+        "unknowns": [
+          "Functional significance",
+          "Alternative diagnosis"
+        ],
+        "reason": "Unsafe reasoning trap: do not equate a percentage estimate with an automatic PCI indication."
+      }
+    ],
+    "simulated_clinical_course": {
+      "after_initial_tests": "Learner should explain why serial biomarkers and ECG context matter.",
+      "after_anatomy": "If the learner selects a physiology assessment, reveal a synthetic non-ischaemic result and explain that no PCI is performed in the reference pathway. If they choose automatic stenting, trigger a reasoning/safety debrief, not a procedural reward."
+    },
+    "learning_objectives": [
+      "Differentiate stable symptoms from acute coronary syndrome using the whole presentation.",
+      "Explain limits of a single ECG/troponin result.",
+      "Avoid automatic PCI for an intermediate lesion."
+    ],
+    "review_note": "Synthetic content requires review and approval by a qualified interventional cardiologist before educational deployment. No values are validated clinical thresholds or instructions."
+  }
+}

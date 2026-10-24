@@ -1,0 +1,116 @@
+{
+  "case_id": "CASE-ACS-001",
+  "case_version": "1.0.0",
+  "seed": 41027,
+  "schema_version": "1.0.0",
+  "review_status": "pending_review",
+  "title": "Chest discomfort: investigation and pathway selection",
+  "presentation": {
+    "age": 62,
+    "symptoms": [
+      "Intermittent chest discomfort"
+    ],
+    "history": [
+      "Synthetic educational case"
+    ],
+    "vitals": {
+      "heart_rate_bpm": 84,
+      "systolic_bp_mmhg": 132,
+      "oxygen_saturation_percent": 98
+    },
+    "notice": "All values are fictional and intended only for software demonstration."
+  },
+  "allergy_history": [
+    {
+      "substance": "Example contrast agent",
+      "reaction": "Previous immediate allergic-like reaction recorded in case history",
+      "severity": "high",
+      "status": "documented",
+      "requires_acknowledgement": true
+    }
+  ],
+  "investigation_catalog": [
+    {
+      "id": "ecg",
+      "name": "12-lead ECG (simulated)",
+      "cost_points": 1,
+      "duration_minutes": 5,
+      "limitations": "A normal result does not exclude every coronary condition.",
+      "rationale_options": [
+        "Assess electrical evidence",
+        "Clarify current symptoms",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "bloods",
+      "name": "Cardiac blood tests (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 20,
+      "limitations": "Interpretation depends on timing, trend and clinical context.",
+      "rationale_options": [
+        "Assess myocardial injury",
+        "Clarify risk in context",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "echo",
+      "name": "Echocardiography (simulated)",
+      "cost_points": 3,
+      "duration_minutes": 25,
+      "limitations": "Does not directly exclude all coronary artery disease.",
+      "rationale_options": [
+        "Assess cardiac structure/function",
+        "Investigate relevant findings",
+        "No relevant reason"
+      ]
+    }
+  ],
+  "pathways": [
+    {
+      "id": "further_investigation",
+      "label": "Further investigation",
+      "classification": "acceptable",
+      "supports": [
+        "Symptoms need contextual assessment"
+      ],
+      "against": [],
+      "unknowns": [
+        "Additional investigation results"
+      ],
+      "reason": "Illustrative pathway for this software demo."
+    },
+    {
+      "id": "diagnostic_angiography",
+      "label": "Consider diagnostic angiography",
+      "classification": "acceptable_with_caveats",
+      "supports": [
+        "May be considered in an appropriate reviewed scenario"
+      ],
+      "against": [
+        "Current case has incomplete information"
+      ],
+      "unknowns": [
+        "Full investigation results",
+        "Clinical review"
+      ],
+      "reason": "Educational option only; not a real clinical recommendation."
+    },
+    {
+      "id": "automatic_stent",
+      "label": "Proceed directly to stenting",
+      "classification": "not_recommended",
+      "supports": [],
+      "against": [
+        "No demonstrated anatomy or indication in revealed findings"
+      ],
+      "unknowns": [
+        "Coronary anatomy",
+        "Further investigation"
+      ],
+      "reason": "The demo must not presume a lesion or automatically recommend intervention."
+    }
+  ],
+  "disclaimer": "Educational simulation only. Not for clinical use."
+}

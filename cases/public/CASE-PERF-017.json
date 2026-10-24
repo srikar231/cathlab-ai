@@ -1,0 +1,182 @@
+{
+  "case_id": "CASE-PERF-017",
+  "case_version": "1.0.0",
+  "seed": 82481,
+  "schema_version": "1.0.0",
+  "review_status": "pending_review",
+  "title": "Rare complication: suspected coronary perforation during intervention simulation",
+  "presentation": {
+    "age": 68,
+    "sex": "Female",
+    "symptoms": [
+      "During a simulated complex coronary intervention, new hypotension develops and pericardial fluid appears.",
+      "The initial presentation is a stable coronary lesion case; this branch tests recognition of an acute procedural complication."
+    ],
+    "history": [
+      "Chronic kidney disease in fictional history",
+      "Complex calcified lesion in parent scenario"
+    ],
+    "medications": [
+      "Medication record available but requires antithrombotic and bleeding-risk review"
+    ],
+    "vitals": "Before event: HR 76 bpm, BP 126/74 mmHg. Event: HR 112 bpm, BP 78/48 mmHg, SpO2 93%; immediate simulated deterioration.",
+    "initial_ecg_summary": "Sinus tachycardia with nonspecific ischemic changes; ECG alone does not establish the cause.",
+    "initial_troponin_summary": "CBC/hemoglobin trend and coagulation/antithrombotic context requested; immediate lab values may lag behind clinical deterioration.",
+    "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+  },
+  "allergy_history": [
+    {
+      "substance": "scenario allergy review",
+      "reaction": "Contrast/medication allergy status to be verified",
+      "status": "must_verify",
+      "severity": "unknown_until_verified"
+    }
+  ],
+  "investigation_catalog": [
+    {
+      "id": "ecg",
+      "name": "12-lead ECG (simulated)",
+      "cost_points": 1,
+      "duration_minutes": 5,
+      "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "serial_troponin",
+      "name": "Serial high-sensitivity cardiac troponin (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 60,
+      "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "cbc_chemistry",
+      "name": "CBC, renal function and electrolytes (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 30,
+      "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "echo",
+      "name": "Transthoracic echocardiogram (simulated)",
+      "cost_points": 3,
+      "duration_minutes": 25,
+      "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "coronary_imaging",
+      "name": "Coronary imaging report (simulated)",
+      "cost_points": 5,
+      "duration_minutes": 45,
+      "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "specialist_review",
+      "name": "Specialist/Heart Team review (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 30,
+      "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    }
+  ],
+  "pathways": [
+    {
+      "id": "pause_escalate",
+      "label": "Pause the training sequence and trigger immediate cath-lab emergency response",
+      "classification": "acceptable",
+      "supports": [
+        "Suspected coronary perforation with possible tamponade physiology in a simulated cath-lab event."
+      ],
+      "against": [],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Hemodynamic collapse with new pericardial fluid is a stop-level event."
+    },
+    {
+      "id": "continue_routine",
+      "label": "Continue the elective procedure without reassessment",
+      "classification": "not_recommended",
+      "supports": [
+        "Suspected coronary perforation with possible tamponade physiology in a simulated cath-lab event."
+      ],
+      "against": [
+        "Unresolved uncertainty or scenario-specific risk"
+      ],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Critical safety failure in the simulation."
+    },
+    {
+      "id": "document_only",
+      "label": "Record the finding but take no escalation action",
+      "classification": "not_recommended",
+      "supports": [
+        "Suspected coronary perforation with possible tamponade physiology in a simulated cath-lab event."
+      ],
+      "against": [
+        "Unresolved uncertainty or scenario-specific risk"
+      ],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Documentation cannot replace emergency response."
+    }
+  ],
+  "risk_tier": "Severe procedural complication; not a calculated validated score.",
+  "investigation_report_release_order": [
+    "initial_ecg",
+    "serial_troponin",
+    "cbc_chemistry",
+    "echo",
+    "coronary_imaging",
+    "specialist_review"
+  ],
+  "disclaimer": "Synthetic educational simulation only. Not for real-patient care."
+}

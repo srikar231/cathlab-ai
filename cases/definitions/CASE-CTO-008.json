@@ -1,0 +1,273 @@
+{
+  "case_id": "CASE-CTO-008",
+  "case_version": "1.0.0",
+  "seed": 82148,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Common specialist case: chronic total occlusion with stable symptoms",
+    "presentation": {
+      "age": 63,
+      "sex": "Male",
+      "symptoms": [
+        "Persistent exertional angina despite a reported trial of anti-anginal therapy.",
+        "Symptoms for several months, stable in the last two weeks; no acute rest pain in the entry scenario."
+      ],
+      "history": [
+        "Prior MI several years earlier",
+        "Hypertension",
+        "Former smoker"
+      ],
+      "medications": [
+        "Medication list incomplete; assess adherence, contraindications and symptom response"
+      ],
+      "vitals": "HR 70 bpm; BP 124/74 mmHg; RR 15/min; SpO2 98%; stable.",
+      "initial_ecg_summary": "Old inferior Q-wave pattern in the synthetic ECG; no new ischemic change.",
+      "initial_troponin_summary": "No acute hs-cTn rise/fall in the stable scenario; renal function and CBC available for elective planning; exact values to be confirmed in case file.",
+      "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+    },
+    "allergy_history": [
+      {
+        "substance": "scenario allergy review",
+        "reaction": "No known allergies recorded; verify",
+        "status": "must_verify",
+        "severity": "unknown_until_verified"
+      }
+    ],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "coronary_imaging",
+        "name": "Coronary imaging report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "specialist_review",
+        "name": "Specialist/Heart Team review (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "specialist_cto_review",
+        "label": "Specialist review of symptoms, ischemia/viability and CTO complexity",
+        "classification": "acceptable",
+        "supports": [
+          "Chronic total occlusion (CTO) in a patient with stable symptoms; symptom burden, ischemia/viability, anatomy, procedural complexity and patient goals determine whether specialist CTO evaluation is appropriate."
+        ],
+        "against": [],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "The decision is individualized; symptom benefit and procedural risk must be considered."
+      },
+      {
+        "id": "automatic_cto_pci",
+        "label": "Automatically attempt CTO PCI because an occlusion is visible",
+        "classification": "not_recommended",
+        "supports": [
+          "Chronic total occlusion (CTO) in a patient with stable symptoms; symptom burden, ischemia/viability, anatomy, procedural complexity and patient goals determine whether specialist CTO evaluation is appropriate."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Anatomic occlusion alone does not establish that intervention is the best option."
+      },
+      {
+        "id": "medical_reassessment",
+        "label": "Review medical therapy and objective ischemia/symptom burden",
+        "classification": "acceptable_with_caveats",
+        "supports": [
+          "Chronic total occlusion (CTO) in a patient with stable symptoms; symptom burden, ischemia/viability, anatomy, procedural complexity and patient goals determine whether specialist CTO evaluation is appropriate."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Appropriate for shared decision-making and assessment of expected benefit."
+      }
+    ],
+    "risk_tier": "Elective / specialist complexity; not a calculated validated score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "coronary_imaging",
+      "specialist_review"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "Chronic total occlusion (CTO) in a patient with stable symptoms; symptom burden, ischemia/viability, anatomy, procedural complexity and patient goals determine whether specialist CTO evaluation is appropriate.",
+    "risk_assessment": "Elective / specialist complexity; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Old inferior Q-wave pattern in the synthetic ECG; no new ischemic change.",
+      "laboratory_panel": "No acute hs-cTn rise/fall in the stable scenario; renal function and CBC available for elective planning; exact values to be confirmed in case file.",
+      "echocardiography": "LVEF 50%; mild inferior hypokinesis; viability is not fully established by resting echo alone.",
+      "coronary_or_other_imaging": "Reference angiography: chronic total occlusion of mid RCA with collateral filling distal vessel; estimated occlusion length 25 mm, moderate calcification, proximal cap ambiguity in image-quality notes; LAD 40%, LCx 30%; TIMI 0 across occluded segment with distal collateral filling.",
+      "initial_vitals": "HR 70 bpm; BP 124/74 mmHg; RR 15/min; SpO2 98%; stable.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Persistent exertional angina despite a reported trial of anti-anginal therapy.",
+      "history_of_present_illness": "Symptoms for several months, stable in the last two weeks; no acute rest pain in the entry scenario.",
+      "relevant_history": [
+        "Prior MI several years earlier",
+        "Hypertension",
+        "Former smoker"
+      ],
+      "medication_reconciliation": [
+        "Medication list incomplete; assess adherence, contraindications and symptom response"
+      ],
+      "allergy_history": [
+        "No known allergies recorded; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "Symptomatic CTO-related ischemia",
+      "Scar-related symptoms or LV dysfunction",
+      "Non-cardiac chest discomfort",
+      "Microvascular disease"
+    ],
+    "pathway_review": [
+      {
+        "id": "specialist_cto_review",
+        "label": "Specialist review of symptoms, ischemia/viability and CTO complexity",
+        "classification": "acceptable",
+        "reason": "The decision is individualized; symptom benefit and procedural risk must be considered."
+      },
+      {
+        "id": "automatic_cto_pci",
+        "label": "Automatically attempt CTO PCI because an occlusion is visible",
+        "classification": "not_recommended",
+        "reason": "Anatomic occlusion alone does not establish that intervention is the best option."
+      },
+      {
+        "id": "medical_reassessment",
+        "label": "Review medical therapy and objective ischemia/symptom burden",
+        "classification": "acceptable_with_caveats",
+        "reason": "Appropriate for shared decision-making and assessment of expected benefit."
+      }
+    ],
+    "safety_review": "Elective consent, renal/contrast exposure, bleeding risk, comorbidity review, expected benefit, local expertise and alternatives must be discussed.",
+    "simulated_clinical_course": "Reference branch: referral to a specialist decision node; learner compares medical management and intervention evaluation, without catheter wiring instructions.",
+    "learning_objectives": [
+      "Identify CTO and collateral filling.",
+      "Recognize limits of resting echo for viability.",
+      "Discuss symptom-driven, expert-led decision-making."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

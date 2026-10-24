@@ -1,0 +1,185 @@
+{
+  "case_id": "CASE-VASO-014",
+  "case_version": "1.0.0",
+  "seed": 82370,
+  "schema_version": "1.0.0",
+  "review_status": "pending_review",
+  "title": "Rare/under-recognized: suspected vasospastic angina with non-obstructive arteries",
+  "presentation": {
+    "age": 46,
+    "sex": "Male",
+    "symptoms": [
+      "Brief episodes of chest tightness at rest, often overnight, resolving spontaneously.",
+      "Episodes are intermittent; exertional tolerance between episodes is relatively preserved. Symptoms alone are not diagnostic."
+    ],
+    "history": [
+      "Current smoker",
+      "No known obstructive CAD",
+      "No prior MI"
+    ],
+    "medications": [
+      "Medication list to be reconciled; substances that may affect vasomotor tone should be documented by clinical reviewer"
+    ],
+    "vitals": "HR 72 bpm; BP 124/76 mmHg; RR 15/min; SpO2 99%; asymptomatic at the current snapshot.",
+    "initial_ecg_summary": "Resting ECG normal between episodes; one fictional captured symptomatic ECG shows transient ischemic ST shift.",
+    "initial_troponin_summary": "Serial hs-cTn remains below fictional threshold without rise/fall in this episode; electrolytes and renal function available.",
+    "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+  },
+  "allergy_history": [
+    {
+      "substance": "scenario allergy review",
+      "reaction": "No known allergies recorded; verify",
+      "status": "must_verify",
+      "severity": "unknown_until_verified"
+    }
+  ],
+  "investigation_catalog": [
+    {
+      "id": "ecg",
+      "name": "12-lead ECG (simulated)",
+      "cost_points": 1,
+      "duration_minutes": 5,
+      "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "serial_troponin",
+      "name": "Serial high-sensitivity cardiac troponin (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 60,
+      "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "cbc_chemistry",
+      "name": "CBC, renal function and electrolytes (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 30,
+      "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "echo",
+      "name": "Transthoracic echocardiogram (simulated)",
+      "cost_points": 3,
+      "duration_minutes": 25,
+      "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "coronary_imaging",
+      "name": "Coronary imaging report (simulated)",
+      "cost_points": 5,
+      "duration_minutes": 45,
+      "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "specialist_review",
+      "name": "Specialist/Heart Team review (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 30,
+      "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    }
+  ],
+  "pathways": [
+    {
+      "id": "specialist_functional_assessment",
+      "label": "Consider specialist evaluation for ANOCA/INOCA endotypes",
+      "classification": "acceptable_with_caveats",
+      "supports": [
+        "Possible vasospastic angina; diagnosis requires appropriate clinical context and, when indicated, specialist testing. A normal angiogram does not exclude vasomotor disease."
+      ],
+      "against": [
+        "Unresolved uncertainty or scenario-specific risk"
+      ],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Testing choice depends on symptom pattern, local expertise, contraindications and clinical review."
+    },
+    {
+      "id": "normal_angio_dismiss",
+      "label": "Dismiss symptoms because no obstructive lesion is seen",
+      "classification": "not_recommended",
+      "supports": [
+        "Possible vasospastic angina; diagnosis requires appropriate clinical context and, when indicated, specialist testing. A normal angiogram does not exclude vasomotor disease."
+      ],
+      "against": [
+        "Unresolved uncertainty or scenario-specific risk"
+      ],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Non-obstructive anatomy does not exclude vasomotor or microvascular causes."
+    },
+    {
+      "id": "label_without_evidence",
+      "label": "Diagnose vasospasm from symptom timing alone",
+      "classification": "not_recommended",
+      "supports": [
+        "Possible vasospastic angina; diagnosis requires appropriate clinical context and, when indicated, specialist testing. A normal angiogram does not exclude vasomotor disease."
+      ],
+      "against": [
+        "Unresolved uncertainty or scenario-specific risk"
+      ],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Timing can be a clue but is not sufficient proof."
+    }
+  ],
+  "risk_tier": "Variable / mechanism-focused; not a calculated validated score.",
+  "investigation_report_release_order": [
+    "initial_ecg",
+    "serial_troponin",
+    "cbc_chemistry",
+    "echo",
+    "coronary_imaging",
+    "specialist_review"
+  ],
+  "disclaimer": "Synthetic educational simulation only. Not for real-patient care."
+}

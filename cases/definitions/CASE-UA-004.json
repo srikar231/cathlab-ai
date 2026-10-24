@@ -1,0 +1,275 @@
+{
+  "case_id": "CASE-UA-004",
+  "case_version": "1.0.0",
+  "seed": 82000,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Common: suspected unstable angina with non-diagnostic initial tests",
+    "presentation": {
+      "age": 64,
+      "sex": "Female",
+      "symptoms": [
+        "New chest pressure at rest lasting 12 minutes, resolved before assessment; two similar episodes over 24 hours.",
+        "Central pressure with radiation to left shoulder; no fever or pleuritic component reported. Symptom pattern is new and increasing in frequency."
+      ],
+      "history": [
+        "Hypertension",
+        "Dyslipidaemia",
+        "Former smoker",
+        "No known prior MI or coronary intervention"
+      ],
+      "medications": [
+        "Fictional home list: antihypertensive and lipid-lowering therapy; exact names/adherence to be reconciled"
+      ],
+      "vitals": "HR 88 bpm; BP 142/84 mmHg; RR 18/min; SpO2 98% room air; temperature 36.8 C; alert, no shock signs in initial snapshot.",
+      "initial_ecg_summary": "Sinus rhythm; nonspecific ST-T changes; no diagnostic ST elevation. Repeat ECG during recurrent symptoms is not yet available.",
+      "initial_troponin_summary": "hs-cTn fictional assay: 0 h below 99th percentile; repeat sample at scenario-defined interval remains below threshold without significant delta. CBC without major abnormality; creatinine 0.9 mg/dL; potassium 4.1 mmol/L; glucose 118 mg/dL. These are synthetic values.",
+      "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+    },
+    "allergy_history": [
+      {
+        "substance": "scenario allergy review",
+        "reaction": "No known drug allergy recorded in this scenario; verify directly rather than assuming absence",
+        "status": "must_verify",
+        "severity": "unknown_until_verified"
+      }
+    ],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "coronary_imaging",
+        "name": "Coronary imaging report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "specialist_review",
+        "name": "Specialist/Heart Team review (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "urgent_review",
+        "label": "Urgent clinical assessment, serial ECG/biomarkers and risk-based disposition",
+        "classification": "acceptable",
+        "supports": [
+          "Possible unstable angina / NSTE-ACS remains a working diagnosis because symptoms are crescendo/rest symptoms; biomarker-negative results do not alone exclude unstable angina. Non-cardiac causes remain in differential."
+        ],
+        "against": [],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Crescendo/rest symptoms require careful assessment even with initially negative biomarkers."
+      },
+      {
+        "id": "selective_invasive",
+        "label": "Specialist-led invasive evaluation if risk profile or recurrence supports it",
+        "classification": "acceptable_with_caveats",
+        "supports": [
+          "Possible unstable angina / NSTE-ACS remains a working diagnosis because symptoms are crescendo/rest symptoms; biomarker-negative results do not alone exclude unstable angina. Non-cardiac causes remain in differential."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Choice depends on full risk assessment, recurrence, local pathway and patient factors."
+      },
+      {
+        "id": "dismiss",
+        "label": "Discharge based only on one normal ECG and one negative troponin",
+        "classification": "not_recommended",
+        "supports": [
+          "Possible unstable angina / NSTE-ACS remains a working diagnosis because symptoms are crescendo/rest symptoms; biomarker-negative results do not alone exclude unstable angina. Non-cardiac causes remain in differential."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Ignores symptom trajectory and limitations of single time-point testing."
+      }
+    ],
+    "risk_tier": "High concern / urgent assessment; not a calculated validated score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "coronary_imaging",
+      "specialist_review"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "Possible unstable angina / NSTE-ACS remains a working diagnosis because symptoms are crescendo/rest symptoms; biomarker-negative results do not alone exclude unstable angina. Non-cardiac causes remain in differential.",
+    "risk_assessment": "High concern / urgent assessment; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Sinus rhythm; nonspecific ST-T changes; no diagnostic ST elevation. Repeat ECG during recurrent symptoms is not yet available.",
+      "laboratory_panel": "hs-cTn fictional assay: 0 h below 99th percentile; repeat sample at scenario-defined interval remains below threshold without significant delta. CBC without major abnormality; creatinine 0.9 mg/dL; potassium 4.1 mmol/L; glucose 118 mg/dL. These are synthetic values.",
+      "echocardiography": "LVEF 55%; no definite regional wall-motion abnormality; no significant pericardial effusion. Image quality adequate in this teaching report.",
+      "coronary_or_other_imaging": "No coronary anatomy study supplied at entry. If invasive angiography is selected in the reference branch, it shows mild diffuse plaque with no focal stenosis >50% and TIMI 3 flow in all major vessels.",
+      "initial_vitals": "HR 88 bpm; BP 142/84 mmHg; RR 18/min; SpO2 98% room air; temperature 36.8 C; alert, no shock signs in initial snapshot.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "New chest pressure at rest lasting 12 minutes, resolved before assessment; two similar episodes over 24 hours.",
+      "history_of_present_illness": "Central pressure with radiation to left shoulder; no fever or pleuritic component reported. Symptom pattern is new and increasing in frequency.",
+      "relevant_history": [
+        "Hypertension",
+        "Dyslipidaemia",
+        "Former smoker",
+        "No known prior MI or coronary intervention"
+      ],
+      "medication_reconciliation": [
+        "Fictional home list: antihypertensive and lipid-lowering therapy; exact names/adherence to be reconciled"
+      ],
+      "allergy_history": [
+        "No known drug allergy recorded in this scenario; verify directly rather than assuming absence"
+      ]
+    },
+    "differential_diagnosis": [
+      "Unstable angina / NSTE-ACS",
+      "Oesophageal reflux or spasm",
+      "Musculoskeletal pain",
+      "Pulmonary cause if symptoms/signs support it"
+    ],
+    "pathway_review": [
+      {
+        "id": "urgent_review",
+        "label": "Urgent clinical assessment, serial ECG/biomarkers and risk-based disposition",
+        "classification": "acceptable",
+        "reason": "Crescendo/rest symptoms require careful assessment even with initially negative biomarkers."
+      },
+      {
+        "id": "selective_invasive",
+        "label": "Specialist-led invasive evaluation if risk profile or recurrence supports it",
+        "classification": "acceptable_with_caveats",
+        "reason": "Choice depends on full risk assessment, recurrence, local pathway and patient factors."
+      },
+      {
+        "id": "dismiss",
+        "label": "Discharge based only on one normal ECG and one negative troponin",
+        "classification": "not_recommended",
+        "reason": "Ignores symptom trajectory and limitations of single time-point testing."
+      }
+    ],
+    "safety_review": "Confirm symptom onset and serial testing timing; reconcile medicines; document allergy details; assess renal function, bleeding risk, pregnancy possibility where relevant, consent and escalation plan before any invasive pathway.",
+    "simulated_clinical_course": "Reference branch: no culprit obstructive lesion found; learner receives a debrief on why the diagnosis remains clinical and why no automatic PCI target exists.",
+    "learning_objectives": [
+      "Distinguish unstable angina from biomarker-positive MI without overclaiming certainty.",
+      "Use serial testing and clinical trajectory.",
+      "Avoid automatic angiography or PCI without a reasoned indication."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

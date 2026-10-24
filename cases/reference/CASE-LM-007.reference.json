@@ -1,0 +1,87 @@
+{
+  "case_id": "CASE-LM-007",
+  "case_version": "1.0.0",
+  "reference_findings": {
+    "diagnosis": "Potentially significant left-main disease; exact severity and revascularization strategy require careful expert assessment. Risk tier is not a formal score.",
+    "risk_assessment": "High risk / potentially unstable anatomy; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Sinus rhythm with nonspecific ST-T changes; no diagnostic ST elevation.",
+      "laboratory_panel": "Serial hs-cTn below fictional threshold with no significant delta; CBC, renal function and electrolytes included in pre-procedure panel and require review.",
+      "echocardiography": "LVEF 52%; no definite resting regional wall-motion abnormality.",
+      "coronary_or_other_imaging": "Reference angiography: visually estimated 60–70% distal left-main narrowing extending toward bifurcation; LAD and LCx ostia involved to a lesser degree; RCA 40% disease; TIMI 3 flow. Image interpretation is synthetic and intentionally leaves uncertainty requiring specialist review/intravascular assessment where appropriate.",
+      "initial_vitals": "HR 76 bpm; BP 130/76 mmHg; RR 16/min; SpO2 98%; stable in the snapshot.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Exertional chest pressure with a recent increase in frequency and reduced exercise tolerance.",
+      "history_of_present_illness": "No pain at the moment of the initial assessment; recent symptoms are more frequent than baseline.",
+      "relevant_history": [
+        "Hypertension",
+        "Dyslipidaemia",
+        "Family history of premature CAD"
+      ],
+      "medication_reconciliation": [
+        "Fictional statin and antihypertensive listed; verify exact agents and adherence"
+      ],
+      "allergy_history": [
+        "Prior rash to an unspecified antibiotic; not a contrast allergy; details require verification"
+      ]
+    },
+    "differential_diagnosis": [
+      "Obstructive left-main CAD",
+      "Intermediate lesion with visual estimation uncertainty",
+      "Non-cardiac chest symptoms coexisting with CAD"
+    ],
+    "pathway_review": [
+      {
+        "id": "expert_review",
+        "label": "Prompt specialist/Heart Team review and clarification of lesion severity/anatomy",
+        "classification": "acceptable",
+        "reason": "Left-main location and bifurcation involvement carry important prognostic implications."
+      },
+      {
+        "id": "blind_stent",
+        "label": "Treat based only on a single visual percentage without anatomical/clinical review",
+        "classification": "not_recommended",
+        "reason": "Visual estimation uncertainty and complex anatomy make this an unsafe shortcut."
+      },
+      {
+        "id": "ignore",
+        "label": "Dismiss because troponin is negative",
+        "classification": "not_recommended",
+        "reason": "Negative biomarkers do not exclude high-risk chronic coronary anatomy."
+      }
+    ],
+    "safety_review": "Review renal function, contrast reaction history, bleeding risk, consent, medication list and urgency; avoid using the scenario to prescribe a specific revascularization choice without complete Heart Team context.",
+    "simulated_clinical_course": "Reference branch: lesion is escalated for expert anatomy review and Heart Team discussion; no one-click treatment answer is revealed as universally correct.",
+    "learning_objectives": [
+      "Recognize high-risk coronary anatomy.",
+      "Separate ACS biomarker status from anatomic risk.",
+      "Discuss uncertainty and Heart Team decision-making."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

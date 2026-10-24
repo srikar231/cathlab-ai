@@ -1,0 +1,87 @@
+{
+  "case_id": "CASE-BIF-009",
+  "case_version": "1.0.0",
+  "reference_findings": {
+    "diagnosis": "Symptomatic coronary disease involving a bifurcation; lesion significance and strategy depend on anatomy, ischemia, side-branch importance and operator/Heart Team review.",
+    "risk_assessment": "Intermediate-to-high anatomical complexity; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Sinus rhythm; no acute ischemic change.",
+      "laboratory_panel": "No acute hs-cTn rise/fall. CBC and renal function are supplied for procedural planning; no simulated critical abnormality.",
+      "echocardiography": "LVEF 58%; no resting regional wall-motion abnormality.",
+      "coronary_or_other_imaging": "Reference angiography: 70% proximal LAD lesion involving a sizable first diagonal branch; side-branch ostial narrowing ~60%; LAD TIMI 3, diagonal TIMI 3. Lesion is described as a true bifurcation pattern in this synthetic case; exact classification requires expert image review.",
+      "initial_vitals": "HR 74 bpm; BP 132/80 mmHg; RR 16/min; SpO2 98%; stable.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Exertional angina with an abnormal stress imaging report.",
+      "history_of_present_illness": "Stable exertional symptoms; no acute rest symptoms or dynamic ECG changes in this scenario.",
+      "relevant_history": [
+        "Dyslipidaemia",
+        "Hypertension",
+        "No known prior PCI"
+      ],
+      "medication_reconciliation": [
+        "Fictional lipid-lowering medication; medication reconciliation pending"
+      ],
+      "allergy_history": [
+        "No known allergies recorded; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "Epicardial LAD/diagonal ischemia",
+      "Microvascular angina",
+      "Non-cardiac chest pain"
+    ],
+    "pathway_review": [
+      {
+        "id": "imaging_guided_review",
+        "label": "Review anatomy and consider intravascular imaging/physiology where indicated",
+        "classification": "acceptable_with_caveats",
+        "reason": "Complex lesion anatomy can benefit from additional characterization; modality selection needs clinical review."
+      },
+      {
+        "id": "one_size_fits_all",
+        "label": "Assume every bifurcation requires the same stent strategy",
+        "classification": "not_recommended",
+        "reason": "Bifurcation anatomy and branch importance vary."
+      },
+      {
+        "id": "noninvasive_reassess",
+        "label": "Reassess ischemia evidence and symptoms before elective intervention if uncertainty remains",
+        "classification": "acceptable",
+        "reason": "Stable presentation permits structured review when no high-risk features are present."
+      }
+    ],
+    "safety_review": "Consent should include uncertainty, branch-related risks and alternatives; review renal function, allergy history, bleeding risk and medication interactions.",
+    "simulated_clinical_course": "Reference branch: expert planning node compares anatomy and physiology evidence. Simulation shows branch-flow status as an outcome metric, not step-by-step procedural instructions.",
+    "learning_objectives": [
+      "Describe main-vessel and side-branch findings separately.",
+      "Avoid a universal bifurcation strategy assumption.",
+      "Use image quality and uncertainty explicitly."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

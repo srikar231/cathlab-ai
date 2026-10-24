@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/cathlab/coronary-simulation/1.0.0",
+  "title": "CathLab AI Coronary Simulation Data",
+  "description": "Structural data contract only. Values and anatomy require traceable sources and qualified review before educational use.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "provenance", "dominance", "segments", "lesions", "devices"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "provenance": { "$ref": "#/$defs/provenance" },
+    "dominance": { "enum": ["right", "left", "co-dominant", "unknown"] },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/segment" }
+    },
+    "lesions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/lesion" }
+    },
+    "devices": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/device" }
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "review_status"],
+      "properties": {
+        "source_id": { "type": "string", "minLength": 1 },
+        "source_version": { "type": "string" },
+        "license": { "type": "string" },
+        "review_status": { "enum": ["draft", "pending_review", "approved", "rejected"] },
+        "reviewer_role": { "type": ["string", "null"] },
+        "review_date": { "type": ["string", "null"], "format": "date" }
+      }
+    },
+    "point3d": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "z": { "type": "number" }
+      }
+    },
+    "segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["segment_id", "name", "parent_segment_id", "centerline", "units", "reference_diameter_mm", "territory"],
+      "properties": {
+        "segment_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "name": { "type": "string", "minLength": 1 },
+        "parent_segment_id": { "type": ["string", "null"] },
+        "centerline": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/point3d" } },
+        "units": { "const": "mm" },
+        "reference_diameter_mm": { "type": "number", "exclusiveMinimum": 0 },
+        "territory": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "lesion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lesion_id", "segment_id", "morphology", "reference_diameter_mm", "minimum_lumen_diameter_mm", "length_mm", "stenosis_percent"],
+      "properties": {
+        "lesion_id": { "type": "string", "minLength": 1 },
+        "segment_id": { "type": "string", "minLength": 1 },
+        "morphology": { "enum": ["focal", "diffuse", "ostial", "bifurcation", "calcified", "thrombotic", "dissection", "occlusion", "other"] },
+        "reference_diameter_mm": { "type": "number", "exclusiveMinimum": 0 },
+        "minimum_lumen_diameter_mm": { "type": "number", "minimum": 0 },
+        "length_mm": { "type": "number", "exclusiveMinimum": 0 },
+        "stenosis_percent": { "type": "number", "minimum": 0, "maximum": 100 },
+        "note": { "type": "string", "maxLength": 500 }
+      }
+    },
+    "device": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["device_id", "kind", "model_status"],
+      "properties": {
+        "device_id": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["diagnostic_catheter", "guide_catheter", "guidewire", "balloon", "stent", "pressure_wire", "ivus", "oct"] },
+        "model_status": { "enum": ["visual_only", "conceptual", "bench_validated", "clinically_validated"] },
+        "length_mm": { "type": "number", "exclusiveMinimum": 0 },
+        "nominal_diameter_mm": { "type": "number", "exclusiveMinimum": 0 },
+        "compliance_model": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "case_id": "CASE-VASO-014",
+  "case_version": "1.0.0",
+  "reference_findings": {
+    "diagnosis": "Possible vasospastic angina; diagnosis requires appropriate clinical context and, when indicated, specialist testing. A normal angiogram does not exclude vasomotor disease.",
+    "risk_assessment": "Variable / mechanism-focused; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Resting ECG normal between episodes; one fictional captured symptomatic ECG shows transient ischemic ST shift.",
+      "laboratory_panel": "Serial hs-cTn remains below fictional threshold without rise/fall in this episode; electrolytes and renal function available.",
+      "echocardiography": "LVEF 60%; no regional wall-motion abnormality at rest.",
+      "coronary_or_other_imaging": "Reference angiography: no obstructive stenosis; TIMI 3 flow. Vasoreactivity testing is not included in the initial report and must only be represented as an expert-led diagnostic option in the simulator.",
+      "initial_vitals": "HR 72 bpm; BP 124/76 mmHg; RR 15/min; SpO2 99%; asymptomatic at the current snapshot.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Brief episodes of chest tightness at rest, often overnight, resolving spontaneously.",
+      "history_of_present_illness": "Episodes are intermittent; exertional tolerance between episodes is relatively preserved. Symptoms alone are not diagnostic.",
+      "relevant_history": [
+        "Current smoker",
+        "No known obstructive CAD",
+        "No prior MI"
+      ],
+      "medication_reconciliation": [
+        "Medication list to be reconciled; substances that may affect vasomotor tone should be documented by clinical reviewer"
+      ],
+      "allergy_history": [
+        "No known allergies recorded; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "Epicardial vasospasm",
+      "Microvascular angina/spasm",
+      "Reflux or oesophageal spasm",
+      "Panic/anxiety-related symptoms only after appropriate evaluation"
+    ],
+    "pathway_review": [
+      {
+        "id": "specialist_functional_assessment",
+        "label": "Consider specialist evaluation for ANOCA/INOCA endotypes",
+        "classification": "acceptable_with_caveats",
+        "reason": "Testing choice depends on symptom pattern, local expertise, contraindications and clinical review."
+      },
+      {
+        "id": "normal_angio_dismiss",
+        "label": "Dismiss symptoms because no obstructive lesion is seen",
+        "classification": "not_recommended",
+        "reason": "Non-obstructive anatomy does not exclude vasomotor or microvascular causes."
+      },
+      {
+        "id": "label_without_evidence",
+        "label": "Diagnose vasospasm from symptom timing alone",
+        "classification": "not_recommended",
+        "reason": "Timing can be a clue but is not sufficient proof."
+      }
+    ],
+    "safety_review": "Any provocation-testing depiction must remain high-level and clinician-supervised; include informed consent, rhythm monitoring and contraindication review in the educational checklist, not operational dosing or administration steps.",
+    "simulated_clinical_course": "Reference branch: further specialist functional assessment is selected; case debrief explains uncertainty and distinguishes epicardial from microvascular endotypes.",
+    "learning_objectives": [
+      "Recognize angina without obstructive CAD.",
+      "Avoid premature dismissal or diagnosis from one clue.",
+      "Understand that specialized testing requires expertise."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

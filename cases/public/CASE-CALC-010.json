@@ -1,0 +1,182 @@
+{
+  "case_id": "CASE-CALC-010",
+  "case_version": "1.0.0",
+  "seed": 82222,
+  "schema_version": "1.0.0",
+  "review_status": "pending_review",
+  "title": "Common specialist case: heavily calcified coronary stenosis",
+  "presentation": {
+    "age": 72,
+    "sex": "Male",
+    "symptoms": [
+      "Progressive exertional angina and reduced activity over two months.",
+      "Stable at rest in the scenario; symptoms limit ordinary activity."
+    ],
+    "history": [
+      "Diabetes",
+      "CKD stage 3",
+      "Hypertension",
+      "Peripheral arterial disease"
+    ],
+    "medications": [
+      "Medication list and adherence review pending"
+    ],
+    "vitals": "HR 80 bpm; BP 138/82 mmHg; RR 17/min; SpO2 97%; stable.",
+    "initial_ecg_summary": "Sinus rhythm, nonspecific ST-T changes.",
+    "initial_troponin_summary": "No acute hs-cTn delta; creatinine 1.6 mg/dL and eGFR 41 mL/min/1.73 m2 in synthetic report; Hb 11.8 g/dL; potassium 4.4 mmol/L.",
+    "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+  },
+  "allergy_history": [
+    {
+      "substance": "scenario allergy review",
+      "reaction": "Contrast history unknown; must be verified",
+      "status": "must_verify",
+      "severity": "unknown_until_verified"
+    }
+  ],
+  "investigation_catalog": [
+    {
+      "id": "ecg",
+      "name": "12-lead ECG (simulated)",
+      "cost_points": 1,
+      "duration_minutes": 5,
+      "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "serial_troponin",
+      "name": "Serial high-sensitivity cardiac troponin (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 60,
+      "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "cbc_chemistry",
+      "name": "CBC, renal function and electrolytes (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 30,
+      "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "echo",
+      "name": "Transthoracic echocardiogram (simulated)",
+      "cost_points": 3,
+      "duration_minutes": 25,
+      "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "coronary_imaging",
+      "name": "Coronary imaging report (simulated)",
+      "cost_points": 5,
+      "duration_minutes": 45,
+      "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "specialist_review",
+      "name": "Specialist/Heart Team review (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 30,
+      "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    }
+  ],
+  "pathways": [
+    {
+      "id": "complex_lesion_review",
+      "label": "Specialist review of lesion morphology and whether intravascular imaging is useful",
+      "classification": "acceptable",
+      "supports": [
+        "Symptomatic severe calcified LAD disease; lesion preparation and revascularization planning require expert review, especially given CKD and vascular comorbidity."
+      ],
+      "against": [],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Calcification can affect lesion assessment and intervention planning."
+    },
+    {
+      "id": "standard_assumption",
+      "label": "Assume routine lesion treatment is appropriate without assessing calcium/anatomy",
+      "classification": "not_recommended",
+      "supports": [
+        "Symptomatic severe calcified LAD disease; lesion preparation and revascularization planning require expert review, especially given CKD and vascular comorbidity."
+      ],
+      "against": [
+        "Unresolved uncertainty or scenario-specific risk"
+      ],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Ignores lesion complexity and potential procedural risk."
+    },
+    {
+      "id": "renal_safety_review",
+      "label": "Explicitly review renal function and contrast-sparing planning as appropriate",
+      "classification": "acceptable",
+      "supports": [
+        "Symptomatic severe calcified LAD disease; lesion preparation and revascularization planning require expert review, especially given CKD and vascular comorbidity."
+      ],
+      "against": [],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "CKD is a relevant safety and planning variable."
+    }
+  ],
+  "risk_tier": "High anatomical complexity; not a calculated validated score.",
+  "investigation_report_release_order": [
+    "initial_ecg",
+    "serial_troponin",
+    "cbc_chemistry",
+    "echo",
+    "coronary_imaging",
+    "specialist_review"
+  ],
+  "disclaimer": "Synthetic educational simulation only. Not for real-patient care."
+}

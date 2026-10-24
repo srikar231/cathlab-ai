@@ -1,0 +1,273 @@
+{
+  "case_id": "CASE-EMBOLIC-015",
+  "case_version": "1.0.0",
+  "seed": 82407,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Rare: suspected coronary embolism",
+    "presentation": {
+      "age": 69,
+      "sex": "Female",
+      "symptoms": [
+        "Acute chest discomfort with transient ischemic ECG changes and troponin rise.",
+        "History includes atrial fibrillation and recent interruption of prescribed anticoagulation in the fictional scenario; this is a clue requiring verification, not proof of embolism."
+      ],
+      "history": [
+        "Atrial fibrillation",
+        "Hypertension",
+        "Prior transient ischemic attack in fictional history"
+      ],
+      "medications": [
+        "Anticoagulation history incomplete; last dose, indication, interruptions and bleeding history must be clarified"
+      ],
+      "vitals": "HR 96 bpm irregular; BP 120/74 mmHg; RR 18/min; SpO2 97%; stable.",
+      "initial_ecg_summary": "Transient inferolateral ST-T changes; rhythm strip shows atrial fibrillation.",
+      "initial_troponin_summary": "Serial hs-cTn rises above fictional threshold; CBC, renal function, coagulation-related history and bleeding assessment are required.",
+      "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+    },
+    "allergy_history": [
+      {
+        "substance": "scenario allergy review",
+        "reaction": "No known allergies recorded; verify",
+        "status": "must_verify",
+        "severity": "unknown_until_verified"
+      }
+    ],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "coronary_imaging",
+        "name": "Coronary imaging report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "specialist_review",
+        "name": "Specialist/Heart Team review (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "mechanism_and_source",
+        "label": "Specialist assessment of coronary mechanism and potential embolic source",
+        "classification": "acceptable",
+        "supports": [
+          "Coronary embolism is a differential mechanism; require assessment for alternative plaque event and potential embolic source."
+        ],
+        "against": [],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Atrial fibrillation history and abrupt branch cut-off support investigation but are not conclusive."
+      },
+      {
+        "id": "assume_source",
+        "label": "Assume embolism solely because atrial fibrillation is present",
+        "classification": "not_recommended",
+        "supports": [
+          "Coronary embolism is a differential mechanism; require assessment for alternative plaque event and potential embolic source."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Risk factor does not establish mechanism."
+      },
+      {
+        "id": "ignore_anticoag",
+        "label": "Ignore anticoagulation history and bleeding risk",
+        "classification": "not_recommended",
+        "supports": [
+          "Coronary embolism is a differential mechanism; require assessment for alternative plaque event and potential embolic source."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Medication and bleeding history are central safety variables."
+      }
+    ],
+    "risk_tier": "High concern / mechanism-specific; not a calculated validated score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "coronary_imaging",
+      "specialist_review"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "Coronary embolism is a differential mechanism; require assessment for alternative plaque event and potential embolic source.",
+    "risk_assessment": "High concern / mechanism-specific; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Transient inferolateral ST-T changes; rhythm strip shows atrial fibrillation.",
+      "laboratory_panel": "Serial hs-cTn rises above fictional threshold; CBC, renal function, coagulation-related history and bleeding assessment are required.",
+      "echocardiography": "LVEF 50%; mild inferolateral hypokinesis. Left atrial appendage source is not established by this transthoracic study.",
+      "coronary_or_other_imaging": "Reference angiography: abrupt distal obtuse marginal branch cut-off with little diffuse coronary plaque elsewhere; initial angiogram cannot prove embolic source. TIMI 0 distal branch in initial synthetic image.",
+      "initial_vitals": "HR 96 bpm irregular; BP 120/74 mmHg; RR 18/min; SpO2 97%; stable.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Acute chest discomfort with transient ischemic ECG changes and troponin rise.",
+      "history_of_present_illness": "History includes atrial fibrillation and recent interruption of prescribed anticoagulation in the fictional scenario; this is a clue requiring verification, not proof of embolism.",
+      "relevant_history": [
+        "Atrial fibrillation",
+        "Hypertension",
+        "Prior transient ischemic attack in fictional history"
+      ],
+      "medication_reconciliation": [
+        "Anticoagulation history incomplete; last dose, indication, interruptions and bleeding history must be clarified"
+      ],
+      "allergy_history": [
+        "No known allergies recorded; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "Coronary embolism",
+      "Plaque rupture/erosion",
+      "In-situ thrombosis",
+      "Vasospasm"
+    ],
+    "pathway_review": [
+      {
+        "id": "mechanism_and_source",
+        "label": "Specialist assessment of coronary mechanism and potential embolic source",
+        "classification": "acceptable",
+        "reason": "Atrial fibrillation history and abrupt branch cut-off support investigation but are not conclusive."
+      },
+      {
+        "id": "assume_source",
+        "label": "Assume embolism solely because atrial fibrillation is present",
+        "classification": "not_recommended",
+        "reason": "Risk factor does not establish mechanism."
+      },
+      {
+        "id": "ignore_anticoag",
+        "label": "Ignore anticoagulation history and bleeding risk",
+        "classification": "not_recommended",
+        "reason": "Medication and bleeding history are central safety variables."
+      }
+    ],
+    "safety_review": "Reconcile anticoagulant and antiplatelet history, last dose, adherence, renal function, bleeding history and allergy status; do not give dose-specific advice in the simulator.",
+    "simulated_clinical_course": "Reference branch: source evaluation remains part of debrief; learner is scored on considering embolic mechanism without prematurely closing the differential.",
+    "learning_objectives": [
+      "Identify clues to embolic coronary occlusion.",
+      "Distinguish clue from proof.",
+      "Treat anticoagulant history and bleeding assessment as essential."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

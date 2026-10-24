@@ -1,0 +1,81 @@
+{
+  "case_id": "CASE-STABLE-001",
+  "diagnosis": "Stable chest pain with suspected chronic coronary syndrome; intermediate RCA lesion of uncertain functional significance. Alternative causes remain in the differential.",
+  "risk_assessment": "Mild / lower-acuity teaching tier; not a calculated GRACE/TIMI score.",
+  "investigation_reports": {
+    "ecg": "No acute ischemic ST-segment change in the simulated resting ECG.",
+    "serial_troponin": "Serial high-sensitivity troponin values are below the fictional assay-specific 99th percentile and show no significant rise/fall.",
+    "echo": "Preserved LV systolic function; no definite regional wall-motion abnormality in this synthetic report.",
+    "angiography": "Illustrative report: right coronary artery (RCA) with an intermediate 50\u201360% focal mid-vessel narrowing; left main, LAD and circumflex without a high-grade stenosis in this scenario. Angiographic severity alone does not establish functional significance."
+  },
+  "lesions": [
+    {
+      "vessel": "RCA",
+      "segment": "mid RCA",
+      "lesion_type": "intermediate focal stenosis",
+      "estimated_stenosis": "50\u201360% (synthetic)",
+      "flow": "TIMI 3 (synthetic)",
+      "complexity": "non-complex teaching lesion"
+    }
+  ],
+  "pathway_review": [
+    {
+      "id": "risk_refine",
+      "label": "Continue risk assessment and non-invasive evaluation as appropriate",
+      "classification": "acceptable",
+      "supports": [
+        "Stable symptoms, no rest pain in scenario",
+        "No dynamic ECG change or troponin rise in provided data"
+      ],
+      "against": [],
+      "unknowns": [
+        "Full risk profile",
+        "Appropriate test choice",
+        "Symptom trajectory"
+      ],
+      "reason": "A lower-acuity pathway may be considered only after complete clinical assessment; this is not a patient-specific recommendation."
+    },
+    {
+      "id": "physiology_guided",
+      "label": "If angiography is clinically justified, assess lesion significance before revascularization",
+      "classification": "acceptable_with_caveats",
+      "supports": [
+        "Intermediate lesion leaves uncertainty about functional significance"
+      ],
+      "against": [
+        "Invasive testing has risk and may not be needed for every stable patient"
+      ],
+      "unknowns": [
+        "Physiology result",
+        "Patient preference",
+        "Full anatomy"
+      ],
+      "reason": "Demonstrates that an intermediate angiographic narrowing should not automatically trigger stenting."
+    },
+    {
+      "id": "empiric_stent",
+      "label": "Stent the RCA based on visual estimate alone",
+      "classification": "not_recommended",
+      "supports": [],
+      "against": [
+        "No demonstrated culprit ACS",
+        "Intermediate stenosis alone is insufficient evidence of benefit"
+      ],
+      "unknowns": [
+        "Functional significance",
+        "Alternative diagnosis"
+      ],
+      "reason": "Unsafe reasoning trap: do not equate a percentage estimate with an automatic PCI indication."
+    }
+  ],
+  "simulated_clinical_course": {
+    "after_initial_tests": "Learner should explain why serial biomarkers and ECG context matter.",
+    "after_anatomy": "If the learner selects a physiology assessment, reveal a synthetic non-ischaemic result and explain that no PCI is performed in the reference pathway. If they choose automatic stenting, trigger a reasoning/safety debrief, not a procedural reward."
+  },
+  "learning_objectives": [
+    "Differentiate stable symptoms from acute coronary syndrome using the whole presentation.",
+    "Explain limits of a single ECG/troponin result.",
+    "Avoid automatic PCI for an intermediate lesion."
+  ],
+  "review_note": "Synthetic content requires review and approval by a qualified interventional cardiologist before educational deployment. No values are validated clinical thresholds or instructions."
+}

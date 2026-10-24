@@ -1,0 +1,83 @@
+{
+  "case_id": "CASE-NSTEMI-002",
+  "diagnosis": "Working diagnosis: NSTEMI / NSTE-ACS with suspected LCx/obtuse marginal culprit lesion. The final clinical diagnosis must consider competing causes and the complete record.",
+  "risk_assessment": "Moderate / high-risk teaching tier; not a formal validated risk score.",
+  "investigation_reports": {
+    "ecg": "Dynamic lateral ST-segment depression and T-wave inversion in the synthetic ECG series.",
+    "serial_troponin": "Serial high-sensitivity troponin shows a rise above the fictional assay-specific 99th percentile; pattern is consistent with acute myocardial injury in this scenario.",
+    "echo": "Mild inferolateral hypokinesis; estimated LVEF 50% in this synthetic report.",
+    "angiography": "Illustrative report: left circumflex (LCx) obtuse marginal branch with a focal approximately 90% stenosis and impaired flow before simulated treatment; LAD has non-obstructive disease and RCA has moderate non-culprit disease. Anatomy and values are fictional."
+  },
+  "lesions": [
+    {
+      "vessel": "LCx / obtuse marginal branch",
+      "segment": "proximal OM branch",
+      "lesion_type": "focal severe stenosis",
+      "estimated_stenosis": "~90% (synthetic)",
+      "flow": "TIMI 2 before simulated intervention",
+      "complexity": "single culprit lesion teaching scenario"
+    }
+  ],
+  "pathway_review": [
+    {
+      "id": "inpatient_invasive",
+      "label": "Urgent specialist assessment and inpatient invasive strategy consideration",
+      "classification": "acceptable",
+      "supports": [
+        "Dynamic ECG changes and rising troponin in the scenario",
+        "Recurrent symptoms increase concern"
+      ],
+      "against": [],
+      "unknowns": [
+        "Formal risk score",
+        "Bleeding risk",
+        "Renal function",
+        "Medication history and contraindications"
+      ],
+      "reason": "The 2025 ACC/AHA ACS guideline recommends an invasive approach during hospitalization for intermediate/high-risk NSTE-ACS candidates; timing depends on instability and clinician assessment."
+    },
+    {
+      "id": "culprit_pci",
+      "label": "If anatomy, patient factors and Heart Team/clinician assessment support it, simulate culprit-lesion PCI",
+      "classification": "acceptable_with_caveats",
+      "supports": [
+        "Severe focal culprit-like lesion aligns with symptoms and injury pattern"
+      ],
+      "against": [
+        "Revascularization choice depends on full anatomy, contraindications and patient factors"
+      ],
+      "unknowns": [
+        "Coronary anatomy review",
+        "Contrast-reaction plan",
+        "Antithrombotic safety review"
+      ],
+      "reason": "For learning only: compare a successful simulated PCI with alternatives; do not encode a universal device or medication recipe."
+    },
+    {
+      "id": "discharge_no_review",
+      "label": "Discharge without resolving recurrent symptoms or troponin rise",
+      "classification": "not_recommended",
+      "supports": [],
+      "against": [
+        "Misses possible ACS and dynamic risk features"
+      ],
+      "unknowns": [
+        "Final diagnosis",
+        "Coronary anatomy",
+        "Clinical stability"
+      ],
+      "reason": "Safety-critical reasoning trap. The simulation should stop progression and explain the unresolved risk."
+    }
+  ],
+  "simulated_clinical_course": {
+    "on_recurrent_pain": "Increase urgency level; log time and ask learner to reassess stability and escalation.",
+    "after_angiography": "Reveal LCx/OM lesion only after learner requests the angiography report.",
+    "after_pathway": "If a suitable revascularization path is selected, show a simulated post-treatment flow improvement and require a complication/safety check. If ignored, show recurrent ischemia in the teaching timeline."
+  },
+  "learning_objectives": [
+    "Recognize that dynamic ECG changes and troponin rise support an ACS working diagnosis.",
+    "Explain why risk stratification and inpatient invasive assessment may be appropriate.",
+    "Perform a pre-procedure safety review, including contrast-reaction history, renal function, bleeding risk and medication reconciliation."
+  ],
+  "review_note": "Synthetic content requires review and approval by a qualified interventional cardiologist before educational deployment. No values are validated clinical thresholds or instructions."
+}

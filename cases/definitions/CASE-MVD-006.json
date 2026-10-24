@@ -1,0 +1,275 @@
+{
+  "case_id": "CASE-MVD-006",
+  "case_version": "1.0.0",
+  "seed": 82074,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Common: multivessel coronary disease with diabetes",
+    "presentation": {
+      "age": 70,
+      "sex": "Male",
+      "symptoms": [
+        "Progressive exertional dyspnoea and chest tightness over six weeks, now occurring with minimal activity.",
+        "Symptoms reproducible with exertion, relieved by rest. No persistent rest pain in the initial snapshot; symptoms have progressed."
+      ],
+      "history": [
+        "Type 2 diabetes for 15 years",
+        "Chronic kidney disease stage 3 in fictional history",
+        "Hypertension",
+        "Dyslipidaemia"
+      ],
+      "medications": [
+        "Fictional medication list incomplete; assess adherence and drug interactions"
+      ],
+      "vitals": "HR 78 bpm; BP 136/78 mmHg; RR 17/min; SpO2 97%; afebrile; no acute shock features.",
+      "initial_ecg_summary": "Sinus rhythm; nonspecific ST-T changes; no acute ST-elevation pattern.",
+      "initial_troponin_summary": "Serial hs-cTn without significant rise/fall in the fictional stable presentation. Hb 12.1 g/dL; creatinine 1.5 mg/dL; eGFR reported as 44 mL/min/1.73 m2 (synthetic); potassium 4.5 mmol/L; HbA1c 8.2%; LDL-C 118 mg/dL.",
+      "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+    },
+    "allergy_history": [
+      {
+        "substance": "scenario allergy review",
+        "reaction": "No known allergy documented; verify",
+        "status": "must_verify",
+        "severity": "unknown_until_verified"
+      }
+    ],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "coronary_imaging",
+        "name": "Coronary imaging report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "specialist_review",
+        "name": "Specialist/Heart Team review (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "heart_team",
+        "label": "Heart Team discussion comparing medical therapy, PCI feasibility and CABG suitability",
+        "classification": "acceptable",
+        "supports": [
+          "Symptomatic multivessel obstructive coronary artery disease with diabetes and CKD; revascularization strategy requires individualized multidisciplinary review."
+        ],
+        "against": [],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Anatomical complexity, diabetes, LV function, renal risk and patient goals all matter."
+      },
+      {
+        "id": "ad_hoc_multivessel",
+        "label": "Proceed with a broad multivessel PCI plan without reviewing complexity or renal risk",
+        "classification": "not_recommended",
+        "supports": [
+          "Symptomatic multivessel obstructive coronary artery disease with diabetes and CKD; revascularization strategy requires individualized multidisciplinary review."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Skips key individualized planning and contrast/renal-risk review."
+      },
+      {
+        "id": "medical_review",
+        "label": "Optimize guideline-directed chronic coronary disease management and reassess symptoms",
+        "classification": "acceptable_with_caveats",
+        "supports": [
+          "Symptomatic multivessel obstructive coronary artery disease with diabetes and CKD; revascularization strategy requires individualized multidisciplinary review."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Medical therapy is essential; whether it is sufficient depends on complete review and symptoms/anatomy."
+      }
+    ],
+    "risk_tier": "High risk / complex revascularization discussion; not a calculated validated score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "coronary_imaging",
+      "specialist_review"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "Symptomatic multivessel obstructive coronary artery disease with diabetes and CKD; revascularization strategy requires individualized multidisciplinary review.",
+    "risk_assessment": "High risk / complex revascularization discussion; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Sinus rhythm; nonspecific ST-T changes; no acute ST-elevation pattern.",
+      "laboratory_panel": "Serial hs-cTn without significant rise/fall in the fictional stable presentation. Hb 12.1 g/dL; creatinine 1.5 mg/dL; eGFR reported as 44 mL/min/1.73 m2 (synthetic); potassium 4.5 mmol/L; HbA1c 8.2%; LDL-C 118 mg/dL.",
+      "echocardiography": "LVEF 48%; mild global hypokinesis; no acute mechanical complication.",
+      "coronary_or_other_imaging": "Reference angiogram: diffuse calcified disease with ~75% proximal LAD, ~80% mid LCx/large OM, and ~80% proximal RCA lesions; left main 20%; flow TIMI 3 in all three territories. Synthetic SYNTAX-like complexity descriptor is “high complexity”; no formal score is calculated.",
+      "initial_vitals": "HR 78 bpm; BP 136/78 mmHg; RR 17/min; SpO2 97%; afebrile; no acute shock features.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Progressive exertional dyspnoea and chest tightness over six weeks, now occurring with minimal activity.",
+      "history_of_present_illness": "Symptoms reproducible with exertion, relieved by rest. No persistent rest pain in the initial snapshot; symptoms have progressed.",
+      "relevant_history": [
+        "Type 2 diabetes for 15 years",
+        "Chronic kidney disease stage 3 in fictional history",
+        "Hypertension",
+        "Dyslipidaemia"
+      ],
+      "medication_reconciliation": [
+        "Fictional medication list incomplete; assess adherence and drug interactions"
+      ],
+      "allergy_history": [
+        "No known allergy documented; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "Multivessel epicardial CAD",
+      "Heart failure contribution to dyspnoea",
+      "Anaemia/deconditioning",
+      "Pulmonary disease"
+    ],
+    "pathway_review": [
+      {
+        "id": "heart_team",
+        "label": "Heart Team discussion comparing medical therapy, PCI feasibility and CABG suitability",
+        "classification": "acceptable",
+        "reason": "Anatomical complexity, diabetes, LV function, renal risk and patient goals all matter."
+      },
+      {
+        "id": "ad_hoc_multivessel",
+        "label": "Proceed with a broad multivessel PCI plan without reviewing complexity or renal risk",
+        "classification": "not_recommended",
+        "reason": "Skips key individualized planning and contrast/renal-risk review."
+      },
+      {
+        "id": "medical_review",
+        "label": "Optimize guideline-directed chronic coronary disease management and reassess symptoms",
+        "classification": "acceptable_with_caveats",
+        "reason": "Medical therapy is essential; whether it is sufficient depends on complete review and symptoms/anatomy."
+      }
+    ],
+    "safety_review": "Renal function/contrast exposure planning, anemia/bleeding review, diabetes management, medication reconciliation, informed consent and discussion of PCI versus surgical options are required in the educational checklist.",
+    "simulated_clinical_course": "Reference branch: case is referred to a Heart Team decision node rather than rewarding a single automatic intervention. Learner compares expected benefits, risks and unknowns.",
+    "learning_objectives": [
+      "Describe disease in each major vessel and lesion complexity.",
+      "Explain why diabetes/multivessel anatomy can change the revascularization discussion.",
+      "Include CKD and patient preferences."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

@@ -1,0 +1,11 @@
+Reference anatomy model attribution
+
+Model: BodyParts3D 4.0 curated subset containing heart structures and separate left/right coronary artery trees.
+Required attribution: BodyParts3D, © The Database Center for Life Science (DBCLS), licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+License: https://creativecommons.org/licenses/by/4.0/
+Source and model documentation: https://organui.com/docs/components/heart
+Pinned upstream asset: https://cdn.jsdelivr.net/gh/organui/heart-3d@c72ce6654ff8e282942f97750d3104f55ef4fc3d/public/models/heart.glb
+
+Changes for this project: the file is stored locally as bodyparts3d-heart.glb and uniformly scaled and centered at runtime for display. No geometry changes are made.
+
+Limitations: generic adult reference anatomy; not patient-specific, not an angiographic reconstruction, and not clinically validated for procedural guidance. Qualified anatomical review is pending.

@@ -1,0 +1,87 @@
+{
+  "case_id": "CASE-PERF-017",
+  "case_version": "1.0.0",
+  "reference_findings": {
+    "diagnosis": "Suspected coronary perforation with possible tamponade physiology in a simulated cath-lab event.",
+    "risk_assessment": "Severe procedural complication; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Sinus tachycardia with nonspecific ischemic changes; ECG alone does not establish the cause.",
+      "laboratory_panel": "CBC/hemoglobin trend and coagulation/antithrombotic context requested; immediate lab values may lag behind clinical deterioration.",
+      "echocardiography": "New pericardial effusion with features concerning for evolving tamponade in the synthetic event; requires urgent expert assessment.",
+      "coronary_or_other_imaging": "Simulation log reports suspected contrast extravasation from a coronary branch; images are abstracted and not a procedural training guide.",
+      "initial_vitals": "Before event: HR 76 bpm, BP 126/74 mmHg. Event: HR 112 bpm, BP 78/48 mmHg, SpO2 93%; immediate simulated deterioration.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "During a simulated complex coronary intervention, new hypotension develops and pericardial fluid appears.",
+      "history_of_present_illness": "The initial presentation is a stable coronary lesion case; this branch tests recognition of an acute procedural complication.",
+      "relevant_history": [
+        "Chronic kidney disease in fictional history",
+        "Complex calcified lesion in parent scenario"
+      ],
+      "medication_reconciliation": [
+        "Medication record available but requires antithrombotic and bleeding-risk review"
+      ],
+      "allergy_history": [
+        "Contrast/medication allergy status to be verified"
+      ]
+    },
+    "differential_diagnosis": [
+      "Coronary perforation",
+      "Access-site or other hemorrhage",
+      "Acute ventricular dysfunction",
+      "Vasovagal event (less consistent with effusion finding)"
+    ],
+    "pathway_review": [
+      {
+        "id": "pause_escalate",
+        "label": "Pause the training sequence and trigger immediate cath-lab emergency response",
+        "classification": "acceptable",
+        "reason": "Hemodynamic collapse with new pericardial fluid is a stop-level event."
+      },
+      {
+        "id": "continue_routine",
+        "label": "Continue the elective procedure without reassessment",
+        "classification": "not_recommended",
+        "reason": "Critical safety failure in the simulation."
+      },
+      {
+        "id": "document_only",
+        "label": "Record the finding but take no escalation action",
+        "classification": "not_recommended",
+        "reason": "Documentation cannot replace emergency response."
+      }
+    ],
+    "safety_review": "Hard stop, deterministic deterioration timeline, event logging, simulated team activation, echo reassessment and post-event debrief. Do not include device-specific sealing steps or procedural maneuvers.",
+    "simulated_clinical_course": "Reference branch: emergency response is activated; the simulator tracks time to recognition and escalation. The case does not teach the technical repair procedure.",
+    "learning_objectives": [
+      "Recognize hypotension plus new effusion as an emergency pattern.",
+      "Use a hard-stop safety state.",
+      "Record the event timeline and team response."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

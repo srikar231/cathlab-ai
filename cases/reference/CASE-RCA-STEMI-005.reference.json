@@ -1,0 +1,89 @@
+{
+  "case_id": "CASE-RCA-STEMI-005",
+  "case_version": "1.0.0",
+  "reference_findings": {
+    "diagnosis": "Acute inferior STEMI pattern; possible right-ventricular involvement and bradyarrhythmia/hypotension risk require urgent team assessment.",
+    "risk_assessment": "Severe / emergency; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Inferior ST elevation pattern in II, III and aVF with reciprocal change in I/aVL in the synthetic tracing. Right-sided leads are pending in the initial data.",
+      "laboratory_panel": "Initial hs-cTn may be non-diagnostic early; repeat trend rises above the fictional assay threshold. Creatinine 1.1 mg/dL; potassium 4.3 mmol/L; CBC without major abnormality.",
+      "echocardiography": "LVEF approximately 45%; inferior wall hypokinesis. Right-ventricular size/function assessment is limited on first view; additional focused assessment is pending.",
+      "coronary_or_other_imaging": "Reference angiogram: acute thrombotic proximal RCA occlusion, TIMI 0 flow before simulated reperfusion; left main without significant stenosis, LAD mild plaque, LCx mild plaque. Anatomy is fictional.",
+      "initial_vitals": "HR 52 bpm; BP 92/60 mmHg; RR 22/min; SpO2 95% room air; cool extremities and diaphoresis; reassessment required.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Sudden severe chest pressure with nausea, sweating and light-headedness for 45 minutes.",
+      "history_of_present_illness": "Persistent symptoms at rest. Learner should recognize a time-critical presentation; the scenario is not designed to teach procedural steps.",
+      "relevant_history": [
+        "Type 2 diabetes",
+        "Hypertension",
+        "Current smoker",
+        "No prior coronary intervention reported"
+      ],
+      "medication_reconciliation": [
+        "Fictional medication list incomplete at arrival; medication reconciliation pending"
+      ],
+      "allergy_history": [
+        "No known allergy documented initially; verify with patient/records"
+      ]
+    },
+    "differential_diagnosis": [
+      "Acute inferior STEMI",
+      "Aortic syndrome if clinical features suggest it",
+      "Pericarditis/myocarditis in appropriate context",
+      "Non-coronary causes of chest pain"
+    ],
+    "pathway_review": [
+      {
+        "id": "activate_emergency",
+        "label": "Immediate STEMI emergency pathway and reperfusion-team activation",
+        "classification": "acceptable",
+        "reason": "The ECG/clinical pattern is time-critical; do not wait for troponin confirmation when emergency criteria are met."
+      },
+      {
+        "id": "focused_assessment",
+        "label": "Rapid assessment for RV involvement and haemodynamic instability in parallel with escalation",
+        "classification": "acceptable_with_caveats",
+        "reason": "Should not delay emergency reperfusion pathway."
+      },
+      {
+        "id": "wait_biomarker",
+        "label": "Wait for serial troponin before escalating",
+        "classification": "not_recommended",
+        "reason": "A critical timing trap in a compatible STEMI presentation."
+      }
+    ],
+    "safety_review": "Emergency escalation; continuous rhythm/hemodynamic monitoring in simulation; document allergy status, renal function when available, bleeding risk and medication reconciliation without delaying time-critical activation.",
+    "simulated_clinical_course": "Reference branch: simulated reperfusion restores flow; post-event scenario monitors rhythm, blood pressure, heart failure and recurrent ischemia. Alternative branch: delay triggers deterministic hypotension/bradyarrhythmia event.",
+    "learning_objectives": [
+      "Recognize inferior STEMI pattern.",
+      "Consider RV involvement and instability.",
+      "Escalate in parallel rather than waiting for biomarkers."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

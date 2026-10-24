@@ -1,0 +1,272 @@
+{
+  "case_id": "CASE-NSTEMI-002",
+  "case_version": "1.0.0",
+  "seed": 72022,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Moderate-to-high-risk teaching case: suspected NSTEMI with circumflex culprit",
+    "presentation": {
+      "age": 67,
+      "symptoms": [
+        "New chest pressure at rest lasting 25 minutes",
+        "Symptoms have improved but recurred once in observation"
+      ],
+      "history": [
+        "Type 2 diabetes and hypertension in fictional history",
+        "No prior coronary intervention"
+      ],
+      "vitals": {
+        "heart_rate_bpm": 96,
+        "systolic_bp_mmhg": 142,
+        "oxygen_saturation_percent": 96,
+        "status": "currently stable but recurrent symptoms require escalation assessment"
+      },
+      "initial_ecg_summary": "Dynamic lateral ST-segment depression and T-wave inversion in the synthetic ECG series.",
+      "initial_troponin_summary": "Serial high-sensitivity troponin shows a rise above the fictional assay-specific 99th percentile; pattern is consistent with acute myocardial injury in this scenario.",
+      "notice": "Fictional synthetic educational scenario. Risk tier is a teaching label, not a clinical score."
+    },
+    "allergy_history": [
+      {
+        "substance": "Iodinated contrast agent (simulated history)",
+        "reaction": "Prior immediate allergic-like reaction; exact agent and severity need verification",
+        "severity": "high",
+        "status": "documented",
+        "requires_acknowledgement": true
+      }
+    ],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "angiography",
+        "name": "Coronary angiography report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive investigation with risks; simulated result only, not a real procedural guide.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "physiology_imaging",
+        "name": "Coronary physiology / IVUS-OCT review (simulated)",
+        "cost_points": 4,
+        "duration_minutes": 25,
+        "limitations": "Use only where the scenario and qualified review establish relevance; modalities have limitations.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "inpatient_invasive",
+        "label": "Urgent specialist assessment and inpatient invasive strategy consideration",
+        "classification": "acceptable",
+        "supports": [
+          "Dynamic ECG changes and rising troponin in the scenario",
+          "Recurrent symptoms increase concern"
+        ],
+        "against": [],
+        "unknowns": [
+          "Formal risk score",
+          "Bleeding risk",
+          "Renal function",
+          "Medication history and contraindications"
+        ],
+        "reason": "The 2025 ACC/AHA ACS guideline recommends an invasive approach during hospitalization for intermediate/high-risk NSTE-ACS candidates; timing depends on instability and clinician assessment."
+      },
+      {
+        "id": "culprit_pci",
+        "label": "If anatomy, patient factors and Heart Team/clinician assessment support it, simulate culprit-lesion PCI",
+        "classification": "acceptable_with_caveats",
+        "supports": [
+          "Severe focal culprit-like lesion aligns with symptoms and injury pattern"
+        ],
+        "against": [
+          "Revascularization choice depends on full anatomy, contraindications and patient factors"
+        ],
+        "unknowns": [
+          "Coronary anatomy review",
+          "Contrast-reaction plan",
+          "Antithrombotic safety review"
+        ],
+        "reason": "For learning only: compare a successful simulated PCI with alternatives; do not encode a universal device or medication recipe."
+      },
+      {
+        "id": "discharge_no_review",
+        "label": "Discharge without resolving recurrent symptoms or troponin rise",
+        "classification": "not_recommended",
+        "supports": [],
+        "against": [
+          "Misses possible ACS and dynamic risk features"
+        ],
+        "unknowns": [
+          "Final diagnosis",
+          "Coronary anatomy",
+          "Clinical stability"
+        ],
+        "reason": "Safety-critical reasoning trap. The simulation should stop progression and explain the unresolved risk."
+      }
+    ],
+    "risk_tier": "Moderate / high-risk teaching tier; not a formal validated risk score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "angiography",
+      "physiology_imaging"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "Working diagnosis: NSTEMI / NSTE-ACS with suspected LCx/obtuse marginal culprit lesion. The final clinical diagnosis must consider competing causes and the complete record.",
+    "risk_assessment": "Moderate / high-risk teaching tier; not a formal validated risk score.",
+    "investigation_reports": {
+      "ecg": "Dynamic lateral ST-segment depression and T-wave inversion in the synthetic ECG series.",
+      "serial_troponin": "Serial high-sensitivity troponin shows a rise above the fictional assay-specific 99th percentile; pattern is consistent with acute myocardial injury in this scenario.",
+      "echo": "Mild inferolateral hypokinesis; estimated LVEF 50% in this synthetic report.",
+      "angiography": "Illustrative report: left circumflex (LCx) obtuse marginal branch with a focal approximately 90% stenosis and impaired flow before simulated treatment; LAD has non-obstructive disease and RCA has moderate non-culprit disease. Anatomy and values are fictional."
+    },
+    "lesions": [
+      {
+        "vessel": "LCx / obtuse marginal branch",
+        "segment": "proximal OM branch",
+        "lesion_type": "focal severe stenosis",
+        "estimated_stenosis": "~90% (synthetic)",
+        "flow": "TIMI 2 before simulated intervention",
+        "complexity": "single culprit lesion teaching scenario"
+      }
+    ],
+    "pathway_review": [
+      {
+        "id": "inpatient_invasive",
+        "label": "Urgent specialist assessment and inpatient invasive strategy consideration",
+        "classification": "acceptable",
+        "supports": [
+          "Dynamic ECG changes and rising troponin in the scenario",
+          "Recurrent symptoms increase concern"
+        ],
+        "against": [],
+        "unknowns": [
+          "Formal risk score",
+          "Bleeding risk",
+          "Renal function",
+          "Medication history and contraindications"
+        ],
+        "reason": "The 2025 ACC/AHA ACS guideline recommends an invasive approach during hospitalization for intermediate/high-risk NSTE-ACS candidates; timing depends on instability and clinician assessment."
+      },
+      {
+        "id": "culprit_pci",
+        "label": "If anatomy, patient factors and Heart Team/clinician assessment support it, simulate culprit-lesion PCI",
+        "classification": "acceptable_with_caveats",
+        "supports": [
+          "Severe focal culprit-like lesion aligns with symptoms and injury pattern"
+        ],
+        "against": [
+          "Revascularization choice depends on full anatomy, contraindications and patient factors"
+        ],
+        "unknowns": [
+          "Coronary anatomy review",
+          "Contrast-reaction plan",
+          "Antithrombotic safety review"
+        ],
+        "reason": "For learning only: compare a successful simulated PCI with alternatives; do not encode a universal device or medication recipe."
+      },
+      {
+        "id": "discharge_no_review",
+        "label": "Discharge without resolving recurrent symptoms or troponin rise",
+        "classification": "not_recommended",
+        "supports": [],
+        "against": [
+          "Misses possible ACS and dynamic risk features"
+        ],
+        "unknowns": [
+          "Final diagnosis",
+          "Coronary anatomy",
+          "Clinical stability"
+        ],
+        "reason": "Safety-critical reasoning trap. The simulation should stop progression and explain the unresolved risk."
+      }
+    ],
+    "simulated_clinical_course": {
+      "on_recurrent_pain": "Increase urgency level; log time and ask learner to reassess stability and escalation.",
+      "after_angiography": "Reveal LCx/OM lesion only after learner requests the angiography report.",
+      "after_pathway": "If a suitable revascularization path is selected, show a simulated post-treatment flow improvement and require a complication/safety check. If ignored, show recurrent ischemia in the teaching timeline."
+    },
+    "learning_objectives": [
+      "Recognize that dynamic ECG changes and troponin rise support an ACS working diagnosis.",
+      "Explain why risk stratification and inpatient invasive assessment may be appropriate.",
+      "Perform a pre-procedure safety review, including contrast-reaction history, renal function, bleeding risk and medication reconciliation."
+    ],
+    "review_note": "Synthetic content requires review and approval by a qualified interventional cardiologist before educational deployment. No values are validated clinical thresholds or instructions."
+  }
+}

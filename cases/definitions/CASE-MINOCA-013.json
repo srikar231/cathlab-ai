@@ -1,0 +1,275 @@
+{
+  "case_id": "CASE-MINOCA-013",
+  "case_version": "1.0.0",
+  "seed": 82333,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Rare/important: myocardial infarction with non-obstructive coronary arteries (MINOCA working diagnosis)",
+    "presentation": {
+      "age": 52,
+      "sex": "Female",
+      "symptoms": [
+        "Acute chest pain with troponin rise and ischemic ECG changes.",
+        "Symptoms began at rest; initial work-up supports myocardial injury, but coronary angiography shows no obstructive lesion."
+      ],
+      "history": [
+        "Hypertension",
+        "No known prior CAD",
+        "Recent viral-like illness is included as a possible clue but is not diagnostic"
+      ],
+      "medications": [
+        "Medication list to be reconciled"
+      ],
+      "vitals": "HR 86 bpm; BP 126/78 mmHg; RR 18/min; SpO2 98%; stable.",
+      "initial_ecg_summary": "Transient ST-T changes; no persistent STEMI pattern in the available tracing.",
+      "initial_troponin_summary": "Serial hs-cTn shows a clear rise/fall above fictional assay threshold; CBC and renal function without major simulated abnormality.",
+      "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+    },
+    "allergy_history": [
+      {
+        "substance": "scenario allergy review",
+        "reaction": "No known allergies recorded; verify",
+        "status": "must_verify",
+        "severity": "unknown_until_verified"
+      }
+    ],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "coronary_imaging",
+        "name": "Coronary imaging report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "specialist_review",
+        "name": "Specialist/Heart Team review (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "mechanism_workup",
+        "label": "Continue structured mechanism-focused evaluation, including cardiac MRI and coronary assessment as clinically appropriate",
+        "classification": "acceptable",
+        "supports": [
+          "MINOCA is a working description after MI criteria with non-obstructive coronary arteries; it is not a final mechanism diagnosis. Further evaluation is needed to distinguish plaque disruption, spasm, embolism, myocarditis, Takotsubo and other causes."
+        ],
+        "against": [],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "MINOCA is a working diagnosis; mechanism determines subsequent management."
+      },
+      {
+        "id": "label_final",
+        "label": "Stop after writing “MINOCA” as the final cause",
+        "classification": "not_recommended",
+        "supports": [
+          "MINOCA is a working description after MI criteria with non-obstructive coronary arteries; it is not a final mechanism diagnosis. Further evaluation is needed to distinguish plaque disruption, spasm, embolism, myocarditis, Takotsubo and other causes."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Confuses a working diagnosis with the underlying mechanism."
+      },
+      {
+        "id": "empiric_everything",
+        "label": "Apply the same treatment pathway to every possible mechanism without review",
+        "classification": "not_recommended",
+        "supports": [
+          "MINOCA is a working description after MI criteria with non-obstructive coronary arteries; it is not a final mechanism diagnosis. Further evaluation is needed to distinguish plaque disruption, spasm, embolism, myocarditis, Takotsubo and other causes."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Mechanisms differ; the case should teach cause-based reasoning."
+      }
+    ],
+    "risk_tier": "High concern / mechanism unresolved; not a calculated validated score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "coronary_imaging",
+      "specialist_review"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "MINOCA is a working description after MI criteria with non-obstructive coronary arteries; it is not a final mechanism diagnosis. Further evaluation is needed to distinguish plaque disruption, spasm, embolism, myocarditis, Takotsubo and other causes.",
+    "risk_assessment": "High concern / mechanism unresolved; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Transient ST-T changes; no persistent STEMI pattern in the available tracing.",
+      "laboratory_panel": "Serial hs-cTn shows a clear rise/fall above fictional assay threshold; CBC and renal function without major simulated abnormality.",
+      "echocardiography": "LVEF 53%; subtle inferolateral hypokinesis; no effusion.",
+      "coronary_or_other_imaging": "Reference coronary angiography: no stenosis >=50%; mild irregularities only; TIMI 3 flow. No OCT/IVUS or cardiac MRI result at entry.",
+      "initial_vitals": "HR 86 bpm; BP 126/78 mmHg; RR 18/min; SpO2 98%; stable.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Acute chest pain with troponin rise and ischemic ECG changes.",
+      "history_of_present_illness": "Symptoms began at rest; initial work-up supports myocardial injury, but coronary angiography shows no obstructive lesion.",
+      "relevant_history": [
+        "Hypertension",
+        "No known prior CAD",
+        "Recent viral-like illness is included as a possible clue but is not diagnostic"
+      ],
+      "medication_reconciliation": [
+        "Medication list to be reconciled"
+      ],
+      "allergy_history": [
+        "No known allergies recorded; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "Plaque disruption not apparent on angiography",
+      "Epicardial or microvascular spasm",
+      "Coronary embolism",
+      "Myocarditis",
+      "Takotsubo syndrome",
+      "Supply-demand mismatch"
+    ],
+    "pathway_review": [
+      {
+        "id": "mechanism_workup",
+        "label": "Continue structured mechanism-focused evaluation, including cardiac MRI and coronary assessment as clinically appropriate",
+        "classification": "acceptable",
+        "reason": "MINOCA is a working diagnosis; mechanism determines subsequent management."
+      },
+      {
+        "id": "label_final",
+        "label": "Stop after writing “MINOCA” as the final cause",
+        "classification": "not_recommended",
+        "reason": "Confuses a working diagnosis with the underlying mechanism."
+      },
+      {
+        "id": "empiric_everything",
+        "label": "Apply the same treatment pathway to every possible mechanism without review",
+        "classification": "not_recommended",
+        "reason": "Mechanisms differ; the case should teach cause-based reasoning."
+      }
+    ],
+    "safety_review": "Review contrast/renal status before additional imaging, check medication and allergy history, monitor for recurrent symptoms and ensure the learner distinguishes myocardial injury from confirmed mechanism.",
+    "simulated_clinical_course": "Reference branch: cardiac MRI suggests a non-ischemic myocarditis pattern in the hidden answer; learner is graded on keeping the differential open and ordering suitable clarification, not guessing early.",
+    "learning_objectives": [
+      "MINOCA is not a final etiologic diagnosis.",
+      "Use cardiac MRI and additional tests selectively to resolve mechanism.",
+      "Avoid premature closure."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

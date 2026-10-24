@@ -1,0 +1,78 @@
+{
+  "case_id": "CASE-STEMI-003",
+  "diagnosis": "Working diagnosis: acute anterior STEMI due to presumed proximal LAD occlusion, with evolving haemodynamic compromise. Requires immediate emergency response in real clinical practice.",
+  "risk_assessment": "Severe / emergency teaching tier; no formal score implied.",
+  "investigation_reports": {
+    "ecg": "ST-segment elevation in anterior precordial leads in the synthetic ECG, consistent with a STEMI pattern.",
+    "serial_troponin": "Initial troponin may be pending early after symptom onset; later simulated samples rise substantially. Do not delay emergency pathway selection while waiting for a biomarker when the ECG and clinical context indicate STEMI.",
+    "echo": "Anterior and apical regional wall-motion abnormality; reduced estimated LVEF 35% in this synthetic report.",
+    "angiography": "Illustrative report: acute thrombotic occlusion of proximal LAD with impaired distal flow; moderate RCA disease and non-obstructive LCx disease. A separate optional branch can add left-main/multivessel complexity after the core demo."
+  },
+  "lesions": [
+    {
+      "vessel": "LAD",
+      "segment": "proximal LAD",
+      "lesion_type": "acute thrombotic total occlusion",
+      "estimated_stenosis": "100% occlusion (synthetic)",
+      "flow": "TIMI 0 before simulated reperfusion",
+      "complexity": "high-acuity culprit lesion; haemodynamic deterioration risk"
+    }
+  ],
+  "pathway_review": [
+    {
+      "id": "emergency_reperfusion",
+      "label": "Activate emergency STEMI / PCI-centre pathway and simulate immediate reperfusion assessment",
+      "classification": "acceptable",
+      "supports": [
+        "Persistent ischemic symptoms and STEMI-pattern ECG",
+        "Haemodynamic compromise is developing"
+      ],
+      "against": [],
+      "unknowns": [
+        "Exact onset and transfer timeline",
+        "Contraindications and procedural risk",
+        "Team and facility availability"
+      ],
+      "reason": "Guidelines emphasize time-critical reperfusion for STEMI. This is a simulated decision pathway, not a real-time clinical instruction."
+    },
+    {
+      "id": "delay_for_troponin",
+      "label": "Wait for serial troponin before escalating the STEMI pathway",
+      "classification": "not_recommended",
+      "supports": [],
+      "against": [
+        "Biomarker confirmation should not delay emergency STEMI pathway when ECG/clinical criteria are sufficient"
+      ],
+      "unknowns": [
+        "Clinical context",
+        "ECG confirmation by trained clinician"
+      ],
+      "reason": "Critical timing trap: record delay, deterioration and debrief why waiting is unsafe in this scenario."
+    },
+    {
+      "id": "routine_outpatient",
+      "label": "Treat as routine outpatient stable chest pain",
+      "classification": "not_recommended",
+      "supports": [],
+      "against": [
+        "Persistent symptoms, STEMI-pattern ECG and low blood pressure indicate emergency risk"
+      ],
+      "unknowns": [
+        "Immediate clinical assessment"
+      ],
+      "reason": "Critical misclassification. Block progression to a routine pathway and show a stop-level safety alert."
+    }
+  ],
+  "simulated_clinical_course": {
+    "t_plus_0": "Persistent pain and STEMI-pattern ECG; emergency pathway choice is time-sensitive.",
+    "t_plus_2": "If learner delays escalation, simulated blood pressure falls and alert changes to STOP.",
+    "t_plus_5": "If emergency pathway selected, transfer/team activation is logged; do not provide real catheter manipulation instructions.",
+    "post_reperfusion": "Successful reference branch: simulated flow improves, symptoms lessen and haemodynamics stabilize with ongoing monitoring. Alternate branch: reperfusion failure or ventricular arrhythmia event triggers team-response simulation and debrief."
+  },
+  "learning_objectives": [
+    "Recognize a STEMI emergency pattern and prioritize escalation.",
+    "Understand that biomarker results may lag and should not delay an indicated emergency pathway.",
+    "Practice team communication, pre-procedure safety checks, complication recognition and post-reperfusion monitoring."
+  ],
+  "review_note": "Synthetic content requires review and approval by a qualified interventional cardiologist before educational deployment. No values are validated clinical thresholds or instructions."
+}

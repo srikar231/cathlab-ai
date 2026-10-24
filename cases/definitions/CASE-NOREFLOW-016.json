@@ -1,0 +1,271 @@
+{
+  "case_id": "CASE-NOREFLOW-016",
+  "case_version": "1.0.0",
+  "seed": 82444,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Rare complication: no-reflow after simulated PCI",
+    "presentation": {
+      "age": 62,
+      "sex": "Male",
+      "symptoms": [
+        "The patient initially presents with an acute coronary syndrome; during the simulated intervention, epicardial anatomy appears improved but myocardial perfusion remains poor.",
+        "This is a complication branch attached to an ACS case, not a stand-alone diagnostic presentation."
+      ],
+      "history": [
+        "Diabetes",
+        "Large thrombus burden in the fictional culprit lesion"
+      ],
+      "medications": [
+        "Periprocedural medication record is intentionally incomplete; learner must request reconciliation rather than infer doses"
+      ],
+      "vitals": "Before event: HR 88 bpm, BP 118/72 mmHg. After event: BP trends down and ischemic discomfort persists in the deterministic event timeline.",
+      "initial_ecg_summary": "Persistent ST elevation/ischemic changes after simulated epicardial opening.",
+      "initial_troponin_summary": "Troponin trend expected to rise in the infarction context; no single biomarker can diagnose no-reflow. Hemoglobin, renal function and electrolytes reviewed for safety.",
+      "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+    },
+    "allergy_history": [
+      {
+        "substance": "scenario allergy review",
+        "reaction": "Contrast and medication allergy status must be explicitly checked before simulated intervention",
+        "status": "must_verify",
+        "severity": "unknown_until_verified"
+      }
+    ],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "coronary_imaging",
+        "name": "Coronary imaging report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "specialist_review",
+        "name": "Specialist/Heart Team review (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "recognize_and_escalate",
+        "label": "Recognize poor tissue perfusion and activate the reviewed complication-response pathway",
+        "classification": "acceptable",
+        "supports": [
+          "Suspected no-reflow phenomenon in the educational simulation; exclude mechanical obstruction, dissection, residual lesion and other causes by expert review."
+        ],
+        "against": [],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Persistent ischemia despite apparent epicardial patency requires immediate attention in the scenario."
+      },
+      {
+        "id": "declare_success",
+        "label": "Declare success based only on an open-looking epicardial artery",
+        "classification": "not_recommended",
+        "supports": [
+          "Suspected no-reflow phenomenon in the educational simulation; exclude mechanical obstruction, dissection, residual lesion and other causes by expert review."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Ignores myocardial perfusion and clinical state."
+      },
+      {
+        "id": "blind_action",
+        "label": "Choose an unreviewed intervention without reassessing cause",
+        "classification": "not_recommended",
+        "supports": [
+          "Suspected no-reflow phenomenon in the educational simulation; exclude mechanical obstruction, dissection, residual lesion and other causes by expert review."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Complication management requires trained clinician judgment and case-specific review."
+      }
+    ],
+    "risk_tier": "Severe procedural complication; not a calculated validated score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "coronary_imaging",
+      "specialist_review"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "Suspected no-reflow phenomenon in the educational simulation; exclude mechanical obstruction, dissection, residual lesion and other causes by expert review.",
+    "risk_assessment": "Severe procedural complication; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Persistent ST elevation/ischemic changes after simulated epicardial opening.",
+      "laboratory_panel": "Troponin trend expected to rise in the infarction context; no single biomarker can diagnose no-reflow. Hemoglobin, renal function and electrolytes reviewed for safety.",
+      "echocardiography": "New or persistent regional wall-motion abnormality; LVEF estimate 40% in the fictional branch.",
+      "coronary_or_other_imaging": "Simulation report: epicardial vessel is patent after the intervention branch but distal myocardial blush/perfusion is poor; flow grade and image quality must be clearly marked as synthetic.",
+      "initial_vitals": "Before event: HR 88 bpm, BP 118/72 mmHg. After event: BP trends down and ischemic discomfort persists in the deterministic event timeline.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "The patient initially presents with an acute coronary syndrome; during the simulated intervention, epicardial anatomy appears improved but myocardial perfusion remains poor.",
+      "history_of_present_illness": "This is a complication branch attached to an ACS case, not a stand-alone diagnostic presentation.",
+      "relevant_history": [
+        "Diabetes",
+        "Large thrombus burden in the fictional culprit lesion"
+      ],
+      "medication_reconciliation": [
+        "Periprocedural medication record is intentionally incomplete; learner must request reconciliation rather than infer doses"
+      ],
+      "allergy_history": [
+        "Contrast and medication allergy status must be explicitly checked before simulated intervention"
+      ]
+    },
+    "differential_diagnosis": [
+      "No-reflow/microvascular obstruction",
+      "Residual epicardial obstruction",
+      "Dissection or distal embolization",
+      "Spasm"
+    ],
+    "pathway_review": [
+      {
+        "id": "recognize_and_escalate",
+        "label": "Recognize poor tissue perfusion and activate the reviewed complication-response pathway",
+        "classification": "acceptable",
+        "reason": "Persistent ischemia despite apparent epicardial patency requires immediate attention in the scenario."
+      },
+      {
+        "id": "declare_success",
+        "label": "Declare success based only on an open-looking epicardial artery",
+        "classification": "not_recommended",
+        "reason": "Ignores myocardial perfusion and clinical state."
+      },
+      {
+        "id": "blind_action",
+        "label": "Choose an unreviewed intervention without reassessing cause",
+        "classification": "not_recommended",
+        "reason": "Complication management requires trained clinician judgment and case-specific review."
+      }
+    ],
+    "safety_review": "Pause simulation, log event time, record hemodynamic changes, trigger team escalation, document the response and monitor for arrhythmia/shock. No drug doses or procedural maneuvers are provided.",
+    "simulated_clinical_course": "Reference branch: complication is recognized, team response logged and perfusion improves in the simulated outcome; debrief highlights time to recognition and differential checks.",
+    "learning_objectives": [
+      "Differentiate epicardial patency from tissue-level perfusion.",
+      "Use deterministic event timeline and escalation.",
+      "Avoid declaring procedural success prematurely."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

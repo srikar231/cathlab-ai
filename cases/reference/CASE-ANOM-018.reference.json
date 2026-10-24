@@ -1,0 +1,87 @@
+{
+  "case_id": "CASE-ANOM-018",
+  "case_version": "1.0.0",
+  "reference_findings": {
+    "diagnosis": "Potentially important coronary-origin anomaly; anatomical subtype and risk interpretation require specialist imaging review and correlation with symptoms.",
+    "risk_assessment": "Variable / anatomy clarification; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "Resting ECG without acute ischemic changes; exercise-related tracing not supplied.",
+      "laboratory_panel": "Serial hs-cTn negative in the current resting assessment; CBC, electrolytes and renal function within fictional reference intervals.",
+      "echocardiography": "LVEF 60%; no resting wall-motion abnormality; coronary origin not fully visualized by transthoracic echo.",
+      "coronary_or_other_imaging": "Reference coronary CT angiography report: anomalous origin of a coronary artery from the opposite sinus with an interarterial course described in the fictional report. Exact vessel/course must be reviewed by specialist; invasive angiography alone may not fully define 3D course.",
+      "initial_vitals": "HR 68 bpm; BP 122/72 mmHg; RR 14/min; SpO2 99%; stable at rest.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Exertional chest discomfort and near-syncope during intense exercise.",
+      "history_of_present_illness": "No known coronary disease. Symptoms during exertion require careful risk assessment; the case is not intended to reassure from age alone.",
+      "relevant_history": [
+        "No known diabetes or hypertension",
+        "Family history and sudden-death history must be specifically asked"
+      ],
+      "medication_reconciliation": [
+        "No regular medication reported; verify"
+      ],
+      "allergy_history": [
+        "No known allergies recorded; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "Anomalous coronary origin/course",
+      "Exercise-induced arrhythmia",
+      "Hypertrophic cardiomyopathy or other structural disease",
+      "Non-cardiac exertional symptoms"
+    ],
+    "pathway_review": [
+      {
+        "id": "anatomy_review",
+        "label": "Obtain specialist congenital/coronary-anatomy review and correlate with symptoms",
+        "classification": "acceptable",
+        "reason": "The course and exact anatomy matter; do not generalize from “anomaly” alone."
+      },
+      {
+        "id": "dismiss_young",
+        "label": "Dismiss coronary cause because patient is young and resting ECG is normal",
+        "classification": "not_recommended",
+        "reason": "Does not account for exertional near-syncope or anomalous anatomy."
+      },
+      {
+        "id": "infer_from_angiogram",
+        "label": "Assume 2D angiography fully describes the 3D course",
+        "classification": "not_recommended",
+        "reason": "Cross-sectional imaging may be needed to define the course."
+      }
+    ],
+    "safety_review": "Escalation for exertional syncope/near-syncope, activity advice only by clinician, family history, imaging review, informed consent and specialist referral are tracked as educational actions.",
+    "simulated_clinical_course": "Reference branch: specialist review is requested and case remains open pending anatomic risk characterization.",
+    "learning_objectives": [
+      "Recognize that rare anatomy can be clinically important.",
+      "Use appropriate imaging to define course.",
+      "Avoid reassurance based solely on age or resting tests."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "case_id": "CASE-STENT-011",
+  "case_version": "1.0.0",
+  "reference_findings": {
+    "diagnosis": "Suspected acute stent thrombosis causing acute coronary syndrome; immediate specialist escalation is required in the simulation.",
+    "risk_assessment": "Severe / emergency; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "New ST elevation in leads matching the previously treated territory in the synthetic tracing.",
+      "laboratory_panel": "Initial hs-cTn elevated with rising repeat; CBC and renal function obtained; platelet count and bleeding history require review.",
+      "echocardiography": "New regional wall-motion abnormality in the stented territory; LVEF estimated 40% in the synthetic report.",
+      "coronary_or_other_imaging": "Reference angiography: thrombotic occlusion within recently placed proximal RCA stent, TIMI 0 flow. Other vessels show moderate non-culprit disease. This is a fictional emergency finding.",
+      "initial_vitals": "HR 104 bpm; BP 104/68 mmHg; RR 22/min; SpO2 94%; anxious and diaphoretic.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Severe chest pressure and sweating several days after a recent coronary stent procedure.",
+      "history_of_present_illness": "Pain began suddenly at rest and persists. The scenario requires immediate emergency reassessment.",
+      "relevant_history": [
+        "Prior PCI 5 days ago in fictional timeline",
+        "Diabetes",
+        "Medication adherence uncertain"
+      ],
+      "medication_reconciliation": [
+        "Discharge antiplatelet regimen listed but adherence and interruptions are unknown; reconcile urgently"
+      ],
+      "allergy_history": [
+        "Possible previous medication-related rash, culprit unclear; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "Stent thrombosis",
+      "Stent edge complication/restenosis (timing and context differ)",
+      "New plaque event in another vessel",
+      "Non-coronary cause less likely but assessed by context"
+    ],
+    "pathway_review": [
+      {
+        "id": "emergency_cath_review",
+        "label": "Emergency cardiology/cath-lab activation and urgent assessment",
+        "classification": "acceptable",
+        "reason": "Compatible symptoms and ECG after recent PCI are time-critical."
+      },
+      {
+        "id": "medication_reconcile_parallel",
+        "label": "Review antiplatelet adherence and interactions in parallel without delaying escalation",
+        "classification": "acceptable_with_caveats",
+        "reason": "Important for cause analysis but must not delay emergency care."
+      },
+      {
+        "id": "routine_followup",
+        "label": "Book routine outpatient follow-up only",
+        "classification": "not_recommended",
+        "reason": "Dangerous under-triage of possible acute coronary occlusion."
+      }
+    ],
+    "safety_review": "Emergency escalation, bleeding risk, platelet count, antithrombotic medication history, adherence/interaction review, allergy status and post-event monitoring. No drug dosing in this simulator.",
+    "simulated_clinical_course": "Reference branch: emergency team activation and simulated restoration of flow; debrief examines adherence uncertainty, event timeline and recurrence prevention review.",
+    "learning_objectives": [
+      "Recognize possible stent thrombosis.",
+      "Treat medication reconciliation as critical but not a reason to delay escalation.",
+      "Use post-PCI safety monitoring."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}

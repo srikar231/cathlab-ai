@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "provenance": {
+    "source_id": "synthetic-schema-example",
+    "review_status": "pending_review",
+    "reviewer_role": null,
+    "review_date": null
+  },
+  "dominance": "unknown",
+  "segments": [
+    {
+      "segment_id": "lmca",
+      "name": "Left main coronary artery",
+      "parent_segment_id": null,
+      "centerline": [{ "x": 0, "y": 0, "z": 0 }, { "x": 1, "y": 0, "z": 0 }],
+      "units": "mm",
+      "reference_diameter_mm": 1,
+      "territory": []
+    },
+    {
+      "segment_id": "lad",
+      "name": "Left anterior descending artery",
+      "parent_segment_id": "lmca",
+      "centerline": [{ "x": 1, "y": 0, "z": 0 }, { "x": 2, "y": -1, "z": 0 }],
+      "units": "mm",
+      "reference_diameter_mm": 1,
+      "territory": []
+    }
+  ],
+  "lesions": [],
+  "devices": []
+}

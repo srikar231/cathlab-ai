@@ -1,0 +1,182 @@
+{
+  "case_id": "CASE-ANOM-018",
+  "case_version": "1.0.0",
+  "seed": 82518,
+  "schema_version": "1.0.0",
+  "review_status": "pending_review",
+  "title": "Rare: anomalous coronary origin discovered during evaluation",
+  "presentation": {
+    "age": 34,
+    "sex": "Male",
+    "symptoms": [
+      "Exertional chest discomfort and near-syncope during intense exercise.",
+      "No known coronary disease. Symptoms during exertion require careful risk assessment; the case is not intended to reassure from age alone."
+    ],
+    "history": [
+      "No known diabetes or hypertension",
+      "Family history and sudden-death history must be specifically asked"
+    ],
+    "medications": [
+      "No regular medication reported; verify"
+    ],
+    "vitals": "HR 68 bpm; BP 122/72 mmHg; RR 14/min; SpO2 99%; stable at rest.",
+    "initial_ecg_summary": "Resting ECG without acute ischemic changes; exercise-related tracing not supplied.",
+    "initial_troponin_summary": "Serial hs-cTn negative in the current resting assessment; CBC, electrolytes and renal function within fictional reference intervals.",
+    "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+  },
+  "allergy_history": [
+    {
+      "substance": "scenario allergy review",
+      "reaction": "No known allergies recorded; verify",
+      "status": "must_verify",
+      "severity": "unknown_until_verified"
+    }
+  ],
+  "investigation_catalog": [
+    {
+      "id": "ecg",
+      "name": "12-lead ECG (simulated)",
+      "cost_points": 1,
+      "duration_minutes": 5,
+      "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "serial_troponin",
+      "name": "Serial high-sensitivity cardiac troponin (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 60,
+      "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "cbc_chemistry",
+      "name": "CBC, renal function and electrolytes (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 30,
+      "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "echo",
+      "name": "Transthoracic echocardiogram (simulated)",
+      "cost_points": 3,
+      "duration_minutes": 25,
+      "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "coronary_imaging",
+      "name": "Coronary imaging report (simulated)",
+      "cost_points": 5,
+      "duration_minutes": 45,
+      "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    },
+    {
+      "id": "specialist_review",
+      "name": "Specialist/Heart Team review (simulated)",
+      "cost_points": 2,
+      "duration_minutes": 30,
+      "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+      "rationale_options": [
+        "Assess current ischemia or injury",
+        "Clarify cardiac structure/function",
+        "Assess coronary anatomy or lesion significance",
+        "Assess alternative diagnosis or procedural safety",
+        "No relevant reason"
+      ]
+    }
+  ],
+  "pathways": [
+    {
+      "id": "anatomy_review",
+      "label": "Obtain specialist congenital/coronary-anatomy review and correlate with symptoms",
+      "classification": "acceptable",
+      "supports": [
+        "Potentially important coronary-origin anomaly; anatomical subtype and risk interpretation require specialist imaging review and correlation with symptoms."
+      ],
+      "against": [],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "The course and exact anatomy matter; do not generalize from “anomaly” alone."
+    },
+    {
+      "id": "dismiss_young",
+      "label": "Dismiss coronary cause because patient is young and resting ECG is normal",
+      "classification": "not_recommended",
+      "supports": [
+        "Potentially important coronary-origin anomaly; anatomical subtype and risk interpretation require specialist imaging review and correlation with symptoms."
+      ],
+      "against": [
+        "Unresolved uncertainty or scenario-specific risk"
+      ],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Does not account for exertional near-syncope or anomalous anatomy."
+    },
+    {
+      "id": "infer_from_angiogram",
+      "label": "Assume 2D angiography fully describes the 3D course",
+      "classification": "not_recommended",
+      "supports": [
+        "Potentially important coronary-origin anomaly; anatomical subtype and risk interpretation require specialist imaging review and correlation with symptoms."
+      ],
+      "against": [
+        "Unresolved uncertainty or scenario-specific risk"
+      ],
+      "unknowns": [
+        "Full clinician review",
+        "Patient preferences",
+        "Complete test results"
+      ],
+      "reason": "Cross-sectional imaging may be needed to define the course."
+    }
+  ],
+  "risk_tier": "Variable / anatomy clarification; not a calculated validated score.",
+  "investigation_report_release_order": [
+    "initial_ecg",
+    "serial_troponin",
+    "cbc_chemistry",
+    "echo",
+    "coronary_imaging",
+    "specialist_review"
+  ],
+  "disclaimer": "Synthetic educational simulation only. Not for real-patient care."
+}

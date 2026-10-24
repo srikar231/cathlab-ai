@@ -1,0 +1,273 @@
+{
+  "case_id": "CASE-SCAD-012",
+  "case_version": "1.0.0",
+  "seed": 82296,
+  "schema_version": "1.0.0",
+  "review": {
+    "author": "CathLab AI project team",
+    "clinical_reviewer": "Pending qualified interventional cardiology review",
+    "review_date": "2026-10-16",
+    "review_status": "pending_review"
+  },
+  "public_case": {
+    "title": "Rare/less common: spontaneous coronary artery dissection (SCAD)",
+    "presentation": {
+      "age": 38,
+      "sex": "Female",
+      "symptoms": [
+        "Acute chest pain after intense emotional stress; discomfort persists for 30 minutes.",
+        "No known prior coronary disease. Scenario includes a recent major stressor; it is a clue, not proof of SCAD."
+      ],
+      "history": [
+        "No known diabetes or hypertension",
+        "No known prior PCI",
+        "Pregnancy/postpartum history must be asked when relevant, not assumed"
+      ],
+      "medications": [
+        "Medication list to be obtained"
+      ],
+      "vitals": "HR 92 bpm; BP 118/74 mmHg; RR 18/min; SpO2 98%; stable at initial snapshot.",
+      "initial_ecg_summary": "T-wave inversion and subtle ST changes in anterior leads; no definitive pattern at first reading.",
+      "initial_troponin_summary": "Serial hs-cTn rises above fictional assay threshold; CBC, renal function and electrolytes without major simulated abnormality.",
+      "notice": "Synthetic educational scenario only; pending clinical review. Simulation tier is not a validated clinical risk score."
+    },
+    "allergy_history": [
+      {
+        "substance": "scenario allergy review",
+        "reaction": "No known allergies recorded; verify",
+        "status": "must_verify",
+        "severity": "unknown_until_verified"
+      }
+    ],
+    "investigation_catalog": [
+      {
+        "id": "ecg",
+        "name": "12-lead ECG (simulated)",
+        "cost_points": 1,
+        "duration_minutes": 5,
+        "limitations": "A single ECG can miss intermittent ischemia; interpret with symptoms and serial testing.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "serial_troponin",
+        "name": "Serial high-sensitivity cardiac troponin (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 60,
+        "limitations": "A single value requires assay-specific thresholds, timing and clinical context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "cbc_chemistry",
+        "name": "CBC, renal function and electrolytes (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Supports safety and differential assessment; results do not diagnose coronary anatomy.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "echo",
+        "name": "Transthoracic echocardiogram (simulated)",
+        "cost_points": 3,
+        "duration_minutes": 25,
+        "limitations": "Wall-motion findings support but do not independently establish the culprit lesion.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "coronary_imaging",
+        "name": "Coronary imaging report (simulated)",
+        "cost_points": 5,
+        "duration_minutes": 45,
+        "limitations": "Invasive or cross-sectional imaging has limitations and must be selected for the case context.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      },
+      {
+        "id": "specialist_review",
+        "name": "Specialist/Heart Team review (simulated)",
+        "cost_points": 2,
+        "duration_minutes": 30,
+        "limitations": "Expert review is not a substitute for clinical judgment; it clarifies uncertainty and options.",
+        "rationale_options": [
+          "Assess current ischemia or injury",
+          "Clarify cardiac structure/function",
+          "Assess coronary anatomy or lesion significance",
+          "Assess alternative diagnosis or procedural safety",
+          "No relevant reason"
+        ]
+      }
+    ],
+    "pathways": [
+      {
+        "id": "expert_scad_review",
+        "label": "Escalate for expert review of possible SCAD and stability",
+        "classification": "acceptable",
+        "supports": [
+          "SCAD is a differential diagnosis in this synthetic ACS presentation; angiographic appearance must be interpreted by experienced clinicians and distinguished from atherosclerosis/spasm."
+        ],
+        "against": [],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Correct recognition matters because management differs from routine atherosclerotic PCI."
+      },
+      {
+        "id": "automatic_stent",
+        "label": "Automatically stent a long smooth lesion without confirming mechanism",
+        "classification": "not_recommended",
+        "supports": [
+          "SCAD is a differential diagnosis in this synthetic ACS presentation; angiographic appearance must be interpreted by experienced clinicians and distinguished from atherosclerosis/spasm."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Unnecessary intervention can be harmful in SCAD; this is a reasoning trap, not a procedural guide."
+      },
+      {
+        "id": "further_diagnostic_review",
+        "label": "Consider reviewed diagnostic clarification and myocardial imaging where clinically appropriate",
+        "classification": "acceptable_with_caveats",
+        "supports": [
+          "SCAD is a differential diagnosis in this synthetic ACS presentation; angiographic appearance must be interpreted by experienced clinicians and distinguished from atherosclerosis/spasm."
+        ],
+        "against": [
+          "Unresolved uncertainty or scenario-specific risk"
+        ],
+        "unknowns": [
+          "Full clinician review",
+          "Patient preferences",
+          "Complete test results"
+        ],
+        "reason": "Choice depends on stability, uncertainty and expert guidance."
+      }
+    ],
+    "risk_tier": "Potential ACS / diagnosis-sensitive; not a calculated validated score.",
+    "investigation_report_release_order": [
+      "initial_ecg",
+      "serial_troponin",
+      "cbc_chemistry",
+      "echo",
+      "coronary_imaging",
+      "specialist_review"
+    ]
+  },
+  "reference_findings": {
+    "diagnosis": "SCAD is a differential diagnosis in this synthetic ACS presentation; angiographic appearance must be interpreted by experienced clinicians and distinguished from atherosclerosis/spasm.",
+    "risk_assessment": "Potential ACS / diagnosis-sensitive; qualitative simulation label only, not a validated score.",
+    "investigation_reports": {
+      "ecg": "T-wave inversion and subtle ST changes in anterior leads; no definitive pattern at first reading.",
+      "laboratory_panel": "Serial hs-cTn rises above fictional assay threshold; CBC, renal function and electrolytes without major simulated abnormality.",
+      "echocardiography": "LVEF 50%; mild anterior hypokinesis.",
+      "coronary_or_other_imaging": "Reference angiography: long smooth tapering narrowing in mid-to-distal LAD with preserved distal flow; no obvious focal calcified plaque. Image quality is intentionally limited and diagnosis remains uncertain without expert review.",
+      "initial_vitals": "HR 92 bpm; BP 118/74 mmHg; RR 18/min; SpO2 98%; stable at initial snapshot.",
+      "not_supplied": "Any test not explicitly listed is not ordered/not available; it must not be interpreted as normal."
+    },
+    "history": {
+      "chief_complaint": "Acute chest pain after intense emotional stress; discomfort persists for 30 minutes.",
+      "history_of_present_illness": "No known prior coronary disease. Scenario includes a recent major stressor; it is a clue, not proof of SCAD.",
+      "relevant_history": [
+        "No known diabetes or hypertension",
+        "No known prior PCI",
+        "Pregnancy/postpartum history must be asked when relevant, not assumed"
+      ],
+      "medication_reconciliation": [
+        "Medication list to be obtained"
+      ],
+      "allergy_history": [
+        "No known allergies recorded; verify"
+      ]
+    },
+    "differential_diagnosis": [
+      "SCAD",
+      "Atherosclerotic plaque rupture",
+      "Epicardial coronary spasm",
+      "Takotsubo syndrome or myocarditis depending on further imaging"
+    ],
+    "pathway_review": [
+      {
+        "id": "expert_scad_review",
+        "label": "Escalate for expert review of possible SCAD and stability",
+        "classification": "acceptable",
+        "reason": "Correct recognition matters because management differs from routine atherosclerotic PCI."
+      },
+      {
+        "id": "automatic_stent",
+        "label": "Automatically stent a long smooth lesion without confirming mechanism",
+        "classification": "not_recommended",
+        "reason": "Unnecessary intervention can be harmful in SCAD; this is a reasoning trap, not a procedural guide."
+      },
+      {
+        "id": "further_diagnostic_review",
+        "label": "Consider reviewed diagnostic clarification and myocardial imaging where clinically appropriate",
+        "classification": "acceptable_with_caveats",
+        "reason": "Choice depends on stability, uncertainty and expert guidance."
+      }
+    ],
+    "safety_review": "Do not make the simulator imply all SCAD requires PCI. Emphasize clinical stability, expert review, associated-condition assessment and monitored care decisions.",
+    "simulated_clinical_course": "Reference branch: expert review favours SCAD; no automatic PCI is performed in the stable synthetic branch. If instability is introduced, route to urgent specialist escalation.",
+    "learning_objectives": [
+      "Recognize a non-atherosclerotic cause of ACS.",
+      "Avoid equating every angiographic narrowing with plaque.",
+      "Discuss why intervention decisions differ by mechanism."
+    ],
+    "required_fields": [
+      "case ID/version",
+      "report timestamps",
+      "patient presentation",
+      "medical history",
+      "medication reconciliation",
+      "allergy reaction details",
+      "vital signs",
+      "serial ECG",
+      "serial biomarkers with assay metadata",
+      "CBC",
+      "renal function",
+      "electrolytes",
+      "echo",
+      "coronary anatomy by vessel/branch",
+      "differential",
+      "risk tier caveat",
+      "pathway classifications",
+      "safety checklist",
+      "event timeline",
+      "outcome/debrief",
+      "review metadata"
+    ],
+    "review_note": "Synthetic scenario. Clinical values and pathway labels require qualified interventional cardiology review before deployment. Educational use only; not real-patient guidance."
+  }
+}
